@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "@apollo/datasource-rest": "^4.3.2",
+    "apollo-datasource-rest": "^3.7.0",
+    "apollo-server": "^3.11.1",
+    "graphql": "^16.6.0",
+    "mongoose": "^6.7.1",
+    "nodemon": "^2.0.20"
+  }
+}
