@@ -6,7 +6,6 @@ import { HintergrundbildComponent } from './components/hintergrundbild/hintergru
 
 @NgModule({
   declarations: [
-  
     HintergrundbildComponent
   ],
   imports: [
