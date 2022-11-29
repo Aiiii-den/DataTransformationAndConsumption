@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {HintergrundComponent} from "./components/hintergrund/hintergrund.component";
+import {TabellenseiteComponent} from "./components/tabellenseite/tabellenseite.component";
 
 const routes: Routes = [
-  { path: 'hintergrundbild', component: HintergrundComponent }
+  { path: 'tabellenseite', component: TabellenseiteComponent }
 ];
 
 @NgModule({
