@@ -20,7 +20,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/assets/images/logo/logo.png",
-              "src/assets/images/hintergrundbild/Hintergrundbild1.png",
+              "src/assets/images/hintergrundbild/Hintergrundbild.png",
               "src/assets"
             ],
             "styles": [
