@@ -2,16 +2,19 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HintergrundbildComponent } from './components/hintergrundbild/hintergrundbild.component';
+import { AppComponent } from './app.component';
+import { HintergrundComponent } from './components/hintergrund/hintergrund.component';
 
 @NgModule({
   declarations: [
-    HintergrundbildComponent
+    AppComponent,
+       HintergrundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
