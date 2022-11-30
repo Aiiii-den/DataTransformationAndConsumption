@@ -1,0 +1,19 @@
+.anordnung{
+    display: grid;
+    grid-gap: 10px;
+  }
+
+.rueckseite{
+    grid-column:4 ;
+    grid-row: 6 ;
+}
+
+
+.searchbar{
+    grid-column: 4;
+    grid-row: 20 ;
+
+}
+
+
+
