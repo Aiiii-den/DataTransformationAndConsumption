@@ -31,6 +31,6 @@ const server = new ApolloServer({
 });
 
 
-console.log("Listening! on localhost:5000");
+console.log("Listening! on localhost:4000");
 
-server.listen({port: 5000});
+server.listen({port: 4000});

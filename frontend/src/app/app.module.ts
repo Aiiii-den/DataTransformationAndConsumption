@@ -10,7 +10,7 @@ import { TabellenseiteComponent } from './components/tabellenseite/tabellenseite
   declarations: [
     AppComponent,
     HintergrundComponent,
-    TabellenseiteComponent
+    TabellenseiteComponent,
   ],
   imports: [
     BrowserModule,
