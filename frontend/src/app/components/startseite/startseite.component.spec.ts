@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HintergrundComponent } from './hintergrund.component';
+import { StartseiteComponent } from './startseite.component';
 
-describe('HintergrundComponent', () => {
-  let component: HintergrundComponent;
-  let fixture: ComponentFixture<HintergrundComponent>;
+describe('StartseiteComponent', () => {
+  let component: StartseiteComponent;
+  let fixture: ComponentFixture<StartseiteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HintergrundComponent ]
+      declarations: [ StartseiteComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HintergrundComponent);
+    fixture = TestBed.createComponent(StartseiteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
