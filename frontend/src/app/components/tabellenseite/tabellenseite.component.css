@@ -1,0 +1,16 @@
+header{
+  font-family: "Verdana";
+  background-color: rgb(78, 78, 179);
+  color:orange;
+  padding-top:30px;
+  padding-bottom:30px;
+  font-size: 1.5em;
+}
+
+h1{
+  text-align: center;
+}
+
+body{
+  margin:0;
+}
