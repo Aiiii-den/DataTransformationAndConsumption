@@ -15,18 +15,16 @@ body{
   margin:0;
 }
 
-.anordnung{
-  display: grid;
-  grid-gap: 10px;
+.rueckseite{
+position:absolute;
+left:1000px;
+top:200px;
 }
 
-img{
-    width: 20cm;
-    height: 25cm;
-
 .searchbar{
-  grid-column: 3;
-  grid-row: 10 ;
+position:absolute;
+left:750px;
+top:300px;
 }
 
 input {
