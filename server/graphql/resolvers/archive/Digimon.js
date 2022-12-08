@@ -4,6 +4,11 @@ const resolvers={
             return dataSources.digimonAPI.getAllDigimon();
         },
         //ruft die Methode getAllDigimon in der DigimonAPI definierten Datei ab und spuckt JSON Datenstruktur mit name, img & level des Digimons aus
+
+        getDigimonFromName: (_, {name}, {dataSources}) => { 
+            return dataSources.digimonAPI.getDigimonFromName(name);
+        },
+        
     },
 
     Digimon: {
@@ -17,7 +22,7 @@ const resolvers={
         //soll den Output der digimons Abfrage/Query nutzen um mit diesem alle spezifischen Cards aller Digimons abzurufen
         //-> Input = alle Digimons der DigimonAPI
         //-> Output: alle Cards aller Digimon mit allen Cards Attributen (siehe ../typeDefs.js)
-    },
+    }
 }
 
 module.exports=resolvers;

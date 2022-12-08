@@ -2,8 +2,8 @@ const { ApolloServer } = require('apollo-server');
 
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
-const DigimonAPI = require('./REST/DigimonAPI');
-const CardsAPI = require('./REST/CardsAPI');
+const DigimonAPI = require('./REST_connection/DigimonAPI');
+const CardsAPI = require('./REST_connection/CardsAPI');
 /*
 const MongoDB = "mongodb+srv://dbUser:userdb@digimonapi0.dz1m4an.mongodb.net/?retryWrites=true&w=majority";
 const mongoose = require('mongoose');

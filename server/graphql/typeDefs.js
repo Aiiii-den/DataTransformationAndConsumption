@@ -6,7 +6,7 @@ module.exports=gql`
     type Digimon {
         name: String!
         img: String!
-        level: String
+        level: String!
         cards: [Cards]
     },
 
@@ -23,25 +23,26 @@ module.exports=gql`
         evolution_cost: Int
     }
 
+    type Favorite {
+        card: Cards!
+        img: String!
+        isFav: Boolean
+    }
+
     type Query {
-        digimons: [Digimon!] 
+        allDigimon: [Digimon!] 
         #returns name, img & level aller Digimon der Serie -> Datenabfrage der DigimonAPI
 
-        cards: [Cards!] 
-        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI (in der ./REST/Cards.js sowie Digimon.js definiert)
-
-        cardsByDigimonName(name: String): [Cards!] 
-        #returns alle type Cards Attribute eines spezifischen Digimons (Abfrage mit name)
+        digimonByName(name: String): Digimon!
 
         allCards: [Cards!] 
-        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI (gleiche wie oben, jedoch bloß in ./REST/Cards definiert)
+        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI (in der ./REST/Cards.js sowie Digimon.js definiert)
+
+        cardsByName(name: String): [Cards!] 
+        #returns alle type Cards Attribute eines spezifischen Digimons (Abfrage mit name)
+    }
+    
+    type Mutation {
+        addFavorite(cardsName: String): Favorite
     }
 `
-
-/*
-query (img){
-    name {
-        cards
-    }
-} ALTER KOMMENTAR / BRAINSTORMING
-*/

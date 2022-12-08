@@ -1,5 +1,5 @@
 const { RESTDataSource } = require('@apollo/datasource-rest');
-const { Cards } = require('../graphql/resolvers/archive/Queries'); //nicht sicher warum ich das hier habe, aber nicht in DigimonAPI
+//const { Cards } = require('../graphql/resolvers/index');
 
 class CardsAPI extends RESTDataSource {
   constructor() {
@@ -7,7 +7,7 @@ class CardsAPI extends RESTDataSource {
     this.baseURL = 'https://digimoncard.io/api-public/';
   }
 
-  getAll() {
+  getAllCards() {
     return this.get(`getAllCards.php?sort=name&series=Digimon Card Game&sortdirection=asc`);
   }
 
