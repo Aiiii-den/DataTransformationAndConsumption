@@ -1,39 +1,37 @@
 header{
-  font-family: "Verdana";
   background-color: rgb(78, 78, 179);
-  color:orange;
-  padding-top:10px;
-  padding-bottom:10px;
-  font-size: 1.5em;
+  padding-top:0.1em;
+  height: 11.5em;
 }
 
 h1{
+  font-family: "Chalkduster";
   text-align: center;
+  color:orange;
+  font-size: 1.7cm;
 }
 
 body{
   margin:0;
 }
 
-.anordnung{
-  display: grid;
-  grid-gap: 10px;
+.rueckseite{
+position: absolute;
+left:900px;
+top:355px;
 }
 
-img{
-    width: 20cm;
-    height: 25cm;
-
 .searchbar{
-  grid-column: 3;
-  grid-row: 10 ;
+position:absolute;
+left:650px;
+top:250px;
 }
 
 input {
   background-color:white;
   font-size: 25px;
   padding: 15px ;
-  padding-right:300px;
+  padding-right:30px;
   padding-left:40px;
   border: 1px;
   border-radius: 10px;
@@ -41,8 +39,9 @@ input {
 
 button{
   background-color:white;
-  font-size: 22px;
+  font-size: 25px;
   padding: 15px 15px;
   border: 1px;
   border-radius: 10px;
+  margin-left: 5px;
 }

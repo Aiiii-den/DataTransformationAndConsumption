@@ -1,14 +1,14 @@
 header{
-  font-family: "Verdana";
   background-color: rgb(78, 78, 179);
-  color:orange;
-  padding-top:30px;
-  padding-bottom:30px;
-  font-size: 1.5em;
+  padding-top:0.1em;
+  height: 11.5em;
 }
 
 h1{
+  font-family: "Chalkduster";
   text-align: center;
+  color:orange;
+  font-size: 1.7cm;
 }
 
 body{
