@@ -3,9 +3,9 @@
     grid-gap: 10px;
   }
 
-.rueckseite{
-    grid-column:4 ;
-    grid-row: 6 ;
+img{
+    width: 20cm;
+    height: 25cm;
 }
 
 
