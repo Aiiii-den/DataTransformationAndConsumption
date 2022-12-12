@@ -1,3 +1,8 @@
+header{
+  background-color: rgb(78, 78, 179);
+  padding-top:0.1em;
+  height: 11.5em;
+}
 body {
     font-family: Verdana;
     border: 1px none black;
