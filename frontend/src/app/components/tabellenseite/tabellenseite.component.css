@@ -1,40 +1,47 @@
+header{
+  background-color: rgb(63, 76, 196);
+  padding-top:0.1em;
+  height: 11.5em;
+}
 
-  body {
-      font-family: Verdana;
-      border: 1px none black;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      padding: 0.5%
-  }
-  
+h1{
+  font-family: "Chalkduster";
+  text-align: center;
+  color: orange;
+  font-size: 1.7cm;
+}
+
   nav {
     display: grid;
     grid-template-columns: 5fr 1fr 1fr 1fr;
     column-gap: 2%;
-    background-color: rgb(109, 109, 115);
+    background-color: rgb(177, 177, 183);
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 2%;
-    margin: 5%
+    padding: 1%;
+    margin: 1.5% 5% 1.5% 5%;
   }
-  
+
   .wrapper {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       padding-bottom: 5%;
       grid-gap: 5%;
-      margin: 5%;
+      margin: 1.5% 5% 1.5% 5%;
+      padding-left: 5%;
   }
-  
+
   .Digimoncard {
       height: 300px;
       width: 280px;
       border: 1px none black;
+    background-color: #fffefe;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       margin-bottom: 1%;
       border-radius: 5%;
-  
+
   }
-  
+
   .Digimonimage img{
       display: block;
       margin: auto;
@@ -46,27 +53,53 @@
       height: 250px;
       width: 280px;
   }
-  
+
   .Digimonname {
       text-align: center;
       padding: 1%;
+      font-family: Verdana;
   }
-  
-  button{
-    background-color:white;
-  font-size: 25px;
-  padding: 15px 15px;
+
+.button{
+    font-family: Chalkduster;
+    background-color: #ffffff;
+    color: rgb(239, 133, 63);
+  font-size: 20px;
+  padding: 10px 10px;
   border: 1px;
   border-radius: 10px;
-  margin-left: 5px;
+
+
   }
-  
+
   input {
     background-color:white;
-    font-size: 25px;
-    padding: 15px ;
+    font-size: 20px;
+    padding: 10px ;
     padding-right:30px;
     padding-left:40px;
     border: 1px;
     border-radius: 10px;
   }
+section{
+  overflow: scroll;
+  position: absolute;
+  top: 36%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+
+}
+a{
+  font-family: "Chalkduster";
+  text-decoration: none;
+  color: #ef853f;
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  top: 93%;
+  bottom: 0%;
+  left: 1.5%;
+  right: 90%;
+  text-shadow: 1px  1px 1px #000000;
+}

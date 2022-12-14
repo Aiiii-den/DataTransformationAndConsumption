@@ -1,15 +1,18 @@
+header{
+  background-color: rgb(63, 76, 196);
+  padding-top:0.1em;
+  height: 11.5em;
+}
+
 h1{
   font-family: "Chalkduster";
   text-align: center;
   color:orange;
   font-size: 1.7cm;
 }
-
 body{
   margin:0;
-
 }
-
 .rueckseite{
 position: absolute;
   top: 43%; bottom: 0; left: 63%; right: 0;
