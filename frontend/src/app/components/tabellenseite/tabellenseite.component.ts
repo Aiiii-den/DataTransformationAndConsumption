@@ -5,11 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tabellenseite.component.html',
   styleUrls: ['./tabellenseite.component.css']
 })
-export class TabellenseiteComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class TabellenseiteComponent{
 
 }
