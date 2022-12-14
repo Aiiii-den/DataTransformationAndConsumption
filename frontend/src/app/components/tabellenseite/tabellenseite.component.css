@@ -1,56 +1,57 @@
-header{
-  background-color: rgb(78, 78, 179);
-  padding-top:0.1em;
-  height: 11.5em;
-}
-body {
-    font-family: Verdana;
-    border: 1px none black;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 0.5%
-}
 
-header {
-    background-color: rgb(97, 97, 145);
-    color: whitesmoke;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 2%;
-    margin: 2%
-}
-
-.wrapper {
+  body {
+      font-family: Verdana;
+      border: 1px none black;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 0.5%
+  }
+  
+  nav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding-bottom: 5%;
-    grid-gap: 1%;
-    margin: 2%;
-}
-
-.Digimoncard {
-    height: 300px;
-    width: 280px;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1f;
-    border: 1px none black;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 1%;
-
-}
-
-.Digimonimage img{
-    display: block;
-    margin: auto;
-    height: 50%;
-    padding-top: 4%;
-    position: relative;
-}
-.Digimonimage{
-    height: 250px;
-    width: 280px;
-}
-
-.Digimonname {
-    text-align: center;
-    padding: 1%;
-}
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 2%;
+      background-color: rgb(97, 97, 145);
+      color: whitesmoke;
+      text-align: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 2%;
+      margin: 2%
+  }
+  
+  .wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding-bottom: 5%;
+      grid-gap: 1%;
+      margin: 2%;
+  }
+  
+  .Digimoncard {
+      height: 300px;
+      width: 280px;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1f;
+      border: 1px none black;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin-bottom: 1%;
+  
+  }
+  
+  .Digimonimage img{
+      display: block;
+      margin: auto;
+      height: 50%;
+      padding-top: 4%;
+      position: relative;
+  }
+  .Digimonimage{
+      height: 250px;
+      width: 280px;
+  }
+  
+  .Digimonname {
+      text-align: center;
+      padding: 1%;
+  }
+  
+  
