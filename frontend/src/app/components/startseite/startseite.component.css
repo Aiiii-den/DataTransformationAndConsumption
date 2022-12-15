@@ -10,21 +10,18 @@ h1{
   color:orange;
   font-size: 1.7cm;
 }
-
 body{
   margin:0;
 }
-
 .rueckseite{
 position: absolute;
-left:900px;
-top:355px;
+  top: 43%; bottom: 0; left: 63%; right: 0;
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.73));
 }
 
 .searchbar{
 position:absolute;
-left:650px;
-top:250px;
+  top: 30%; bottom: 0; left: 45%; right: 0;
 }
 
 input {

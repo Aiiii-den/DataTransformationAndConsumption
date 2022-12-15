@@ -9,8 +9,8 @@ import { StartseiteComponent } from './components/startseite/startseite.componen
 @NgModule({
   declarations: [
     AppComponent,
-    TabellenseiteComponent,
-    StartseiteComponent
+    StartseiteComponent,
+    TabellenseiteComponent
   ],
   imports: [
     BrowserModule,
