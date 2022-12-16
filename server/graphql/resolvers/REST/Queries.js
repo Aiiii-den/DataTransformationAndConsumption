@@ -28,11 +28,26 @@ const resolvers={
         test2: (_, __, {dataSources}) => {
             let digi = dataSources.digimonAPI.getAllDigimon();
             //digi=JSON.parse(digi);
-            for (let i=0; i< Object.keys(digi).length; i++){
+            for (let i in digi){
 
+                /*for(let i = 0; i < digi.length; i++) {
+                let digiName = digi[i];
+                digiName=digiName.name;
+            }*/
+
+                /*
                 let diginame=digi.at(i).name;
                 let digiCards = dataSources.cardsAPI.getCardsByName(diginame);
-                digi[i] = {... digi.at(i), cards: digiCards};
+                digi[i] = {... digi.at(i), cards: digiCards}; */
+
+                //Get the value of the name attribute of the digi JSON at index i
+                let digiName=digi[i].name;
+
+                //Consume the digimonAPI with the name of the Digimon at index i
+                let digiCards = dataSources.cardsAPI.getCardsByName(digiName);
+
+                // Change the value of the cards attribute at index i
+                digi[i].cards = digiCards;
             }
 
             return digi;
