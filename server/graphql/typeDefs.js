@@ -30,7 +30,7 @@ module.exports=gql`
     }
 
     type Query {
-        allDigimon: [Digimon!] 
+        allDigimon: [Digimon] 
         #returns name, img & level aller Digimon der Serie -> Datenabfrage der DigimonAPI
 
         digimonByName(name: String): Digimon!
@@ -40,6 +40,10 @@ module.exports=gql`
 
         cardsByName(name: String): [Cards!] 
         #returns alle type Cards Attribute eines spezifischen Digimons (Abfrage mit name)
+        
+        test1: Digimon
+        
+        test2: [Digimon]
     }
     
     type Mutation {
