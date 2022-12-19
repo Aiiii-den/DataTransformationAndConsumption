@@ -9,6 +9,12 @@ const resolvers={
             return dataSources.digimonAPI.getDigimonByName(name);
         },
 
+
+        digimonByName2: (_, {name}, {dataSources}) => {
+            return dataSources.digimonAPI.altDigimonByName(name);
+        },
+
+
         allCards: (_, __, {dataSources}) => {
             return dataSources.cardsAPI.getAllCards();
         },
@@ -17,15 +23,27 @@ const resolvers={
             return dataSources.cardsAPI.getCardsByName(name);
         },
 
-        test1: (_, { name}, {dataSources}) => {
-            let digi = dataSources.digimonAPI.getDigimonByName(name);
+        testLevel: (_, {level}, {dataSources}) => {
+            return dataSources.digimonAPI.altDigimonByLevel(level);
+        },
+
+        testConjureName: (_, {name}, {dataSources}) => {
+            let digi = dataSources.digimonAPI.getDigimonByName(name); //die Methode funktioniert aus irgendeinem Grund nicht
             let digiCards = dataSources.cardsAPI.getCardsByName(name);
 
             digi = {... digi, cards: digiCards};
             return digi;
         },
 
-        test2: (_, __, {dataSources}) => {
+        testConjureName2: (_, {name}, {dataSources}) => {
+            let digi = dataSources.digimonAPI.altDigimonByName(name);
+            //let digiCards = dataSources.cardsAPI.getCardsByName(name);
+
+            //digi = {... digi, cards: digiCards};
+            return digi;
+        },
+
+        testConjureAll: (_, __, {dataSources}) => {
             let digi = dataSources.digimonAPI.getAllDigimon();
             //digi=JSON.parse(digi);
             for (let i in digi){
