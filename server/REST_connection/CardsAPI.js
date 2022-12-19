@@ -1,5 +1,4 @@
 const { RESTDataSource } = require('@apollo/datasource-rest');
-//const { Cards } = require('../graphql/resolvers/index');
 
 class CardsAPI extends RESTDataSource {
   constructor() {

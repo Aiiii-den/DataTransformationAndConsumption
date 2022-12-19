@@ -1,5 +1,4 @@
 const { RESTDataSource } = require('@apollo/datasource-rest');
-//const { Digimon } = require('../graphql/resolvers/index');
 
 class DigimonAPI extends RESTDataSource {
   constructor() {
@@ -29,20 +28,35 @@ class DigimonAPI extends RESTDataSource {
     return JSON.stringify(arr);
   }*/
 
-  async altDigimonByName(name){
-    const response = await this.get(``, { name: name });
-    //return JSON.stringify(this.altReducer(response[0]));
-    //return this.altReducer(response[0]);
-    return response[0];
+  altDigimonByName(name){
+    const response = this.get(``); //returns an array of all Digimon
+    //durch JSON durchloopen und nach name Wert filtern und in neuem JSON Array abspeichern
+    /*let DigimonByName = response.filter ( (value) => {
+      if(value.name === name)
+      {
+        return value;
+      }
+    });*/
+    return response.filter((response) => response.name === name);
   }
 
-  async altDigimonByLevel(level){
-    const response = await this.get(``, { level: level });
-    /*let arr = Array.isArray(response)
-        ? response.map(digimon => this.altReducer(digimon))
-        : [];*/
+  /*
+    HOW TO ACCESS AN /THE VALUE OF ELEMENT INSIDE AN ARRAY WHICH IS INSIDE A JSON WHICH IN TURN
+    IS IN ANOTHER JSON??????
+   */
 
-    return response;
+
+  async altDigimonByLevel(level){
+    const response = await this.get(``);
+
+    //JSON.parse(data).data.filter(...)
+    //durch JSON durchloopen und nach level Wert filtern und in neuem JSON Array abspeichern
+    let DigimonByName = JSON.parse(response).response.filter ( (value) => {
+      if(value.data.level == level)
+      {
+        return value;
+      }
+    });
   }
 
   async altReducer(Digimon){
@@ -52,6 +66,20 @@ class DigimonAPI extends RESTDataSource {
       level: Digimon.level,
     };
   }
+
+  searchElem(DigiArr, elem, para ){
+    //loop through JSON Array and filter based on input value, if value = true, save in new JSON Array
+    //and return the array after the loop
+    let Digimon = DigiArr.filter ( (value) => {
+      if(value.elem.equals(para))
+      {
+        return value;
+      }
+    });
+
+    return null;
+  }
+
 
 }
 

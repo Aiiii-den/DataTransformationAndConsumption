@@ -33,17 +33,17 @@ module.exports=gql`
         allDigimon: [Digimon] 
         #returns name, img & level aller Digimon der Serie -> Datenabfrage der DigimonAPI
 
-        digimonByName(name: String): Digimon!
-        #returns ein Digimon gesucht nach Namen
+        digimonByName(name: String): [Digimon]
+        #returns ein Digimon gesucht nach Namen -> Datenabfrage der DigimonAPI
         
         #new alternative for digimonByName
         digimonByName2(name: String): Digimon!
-
+        
         allCards: [Cards!] 
-        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI (in der ./REST/Cards.js sowie Digimon.js definiert)
-
+        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI 
+        
         cardsByName(name: String): [Cards!] 
-        #returns alle type Cards Attribute eines spezifischen Digimons (Abfrage mit name)
+        #returns alle type Cards Attribute eines spezifischen Digimons (Abfrage mit name) -> Datenabfrage der CardsAPI 
         
         testConjureName(name: String): Digimon
         #returns alle Digimon (incl cards) Attribut für ein spezifisches Digimon -> Vereinigung beider REST API Rückgaben‚
@@ -53,7 +53,7 @@ module.exports=gql`
         testConjureAll: [Digimon]
         #returns alle Digimon (incl cards) -> Vereinigung beider REST API Rückgaben
         
-        testLevel(level: String): Digimon
+        digimonByLevel(level: String): [Digimon]
     }
     
     type Mutation {
