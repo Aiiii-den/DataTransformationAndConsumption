@@ -27,15 +27,7 @@ const resolvers={
 
             digi = {... digi, cards: digiCards};
             return digi;
-        },
-
-        testConjureName2: (_, {name}, {dataSources}) => {
-            let digi = dataSources.digimonAPI.altDigimonByName(name);
-            //let digiCards = dataSources.cardsAPI.getCardsByName(name);
-
-            //digi = {... digi, cards: digiCards};
-            return digi;
-        },
+        }, //doesn't work yet
 
         testConjureAll: (_, __, {dataSources}) => {
             let digi = dataSources.digimonAPI.getAllDigimon();
@@ -63,7 +55,7 @@ const resolvers={
             }
 
             return digi;
-        },
+        },//doesn't work properly
 
     },
 }
