@@ -27,9 +27,11 @@ const resolvers={
 
         //COMBINE RESULTS OF BOTH APIs
         testConjureName: (_, {name}, {dataSources}) => {
-            let digi = dataSources.digimonAPI.getDigimonByName(name);
-            console.log(digi);
-            let digiObj = digi[0];
+            let digi = dataSources.digimonAPI.getDigimonByName(name); // OBJECT TYPE = PROMISE
+            digi = digi.toString();
+            //console.log(digi);
+            //let digiObj = digi[0];
+            digiObj = JSON.parse(digi);
             /*
             -> for name = "Agumon" digi = [{"name":"Agumon","img":"https://digimon.shadowsmith.com/img/agumon.jpg","level":"Rookie"}]
              */
@@ -39,7 +41,7 @@ const resolvers={
 
 
             let digiCards = dataSources.cardsAPI.getCardsByName(name);
-            digiObj.cards = digiCards;
+            //digiObj.cards = digiCards;
             //console.log(digiObj);
             /*
             -> for name = "agumon" digiCards:
@@ -53,9 +55,15 @@ const resolvers={
             [{name: digi.name, img: digi.img, level: digi.level, cards: [digiCards]}]
              */
 
-            //digi = [{... digi, "cards": digiCards}];
+            //digi = [{... digi}];
+            //digiObj = digi[0];
+            //digiObj.cards = digiCards;
+
             //digi = [{"name": digi.name, "img": digi.img, "level": digi.level, "cards": digiCards}]
-            return digiObj;
+            //return digiObj;
+            let arr1 = [{ name: digiObj.name, img: "testimg1", level: "testlevel1", cards: digiCards }, { name: "testname", img: "testimg", level: "testlevel", cards: [] }];
+            //return digiObj; //
+            return arr1;
         }, //doesn't work yet
 
         testConjureAll: (_, __, {dataSources}) => {
