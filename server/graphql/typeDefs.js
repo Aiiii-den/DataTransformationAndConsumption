@@ -51,6 +51,8 @@ module.exports=gql`
         testConjureAll: [Digimon]
         #returns alle Digimon (incl cards) -> Vereinigung beider REST API Rückgaben
         
+        Digimon: [Digimon]
+        
     }
     
     type Mutation {

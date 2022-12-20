@@ -18,7 +18,7 @@ class DigimonAPI extends RESTDataSource {
     //turn the promise into an Array data type
    // return data
   }*/
-  getAllDigimon(){
+  async getAllDigimon() {
     return this.get(``);
   }
 
@@ -40,6 +40,7 @@ class DigimonAPI extends RESTDataSource {
     return promise;
   }
 
+  /*
   getDigimonByName(name) {
     //console.log(this.get(`name/${name}`));
     /*let digi = this.get(`name/${name}`)
@@ -55,7 +56,7 @@ class DigimonAPI extends RESTDataSource {
           //digi=JSON.parse(digi);
           console.log(digi);
           return digi;
-        });*/
+        });
     // Promise Chain with multiple then and catch
     const URL = this.baseURL+`name/${name}`;
     let promise = this.getPromise(URL);
@@ -68,7 +69,7 @@ class DigimonAPI extends RESTDataSource {
         name: digi.name,
         img: digi.img,
         level: digi.level,
-      };*/
+      };
       return [digi[0]];
 
     }).catch(error => {
@@ -78,6 +79,33 @@ class DigimonAPI extends RESTDataSource {
     //console.log(digi);
     //return digi
     //turn the promise into an Array data type
+  }*/
+
+  async getDigimonByName2(name) {
+    return new Promise((resolve, reject) => {
+      const URL = `name/${name}`
+      this.get(URL, (error, results) => {
+        if(error) reject(error);
+        else      resolve(results);
+      })
+    });
+  }
+
+  async asyncFunction(name) {
+    try {
+      const response = await this.getDigimonByName(name);
+      console.log('response received')
+      let digi = response;
+      console.log(digi)
+      return digi;
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+
+  getDigimonByName(name) {
+  return this.get(`name/${name}`);
   }
 
   getDigimonByLevel(level) {
