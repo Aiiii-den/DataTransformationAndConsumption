@@ -1,8 +1,8 @@
-const resolvers={
+const resolvers= {
     Query: {
 
         //ACCESS DIGIMONAPI
-        allDigimon: (_ , __, {dataSources}) => {
+        allDigimon: (_, __, {dataSources}) => {
             return dataSources.digimonAPI.getAllDigimon();
         },
 
@@ -20,49 +20,37 @@ const resolvers={
             return dataSources.cardsAPI.getAllCards();
         },
 
-        cardsByName : (_, {name}, {dataSources}) => {
+        cardsByName: (_, {name}, {dataSources}) => {
             return dataSources.cardsAPI.getCardsByName(name);
         },
 
-
+        /*
         //COMBINE RESULTS OF BOTH APIs
         testConjureName: (_, {name}, {dataSources}) => {
             let digi = dataSources.digimonAPI.getDigimonByName(name); // OBJECT TYPE = PROMISE
-            digi = digi.toString();
-            //console.log(digi);
-            //let digiObj = digi[0];
-            digiObj = JSON.parse(digi);
-            /*
+            digi = digi.toString(); // return [object, .., object]
+            //let digiObj = JSON.parse(digi);
+
+
             -> for name = "Agumon" digi = [{"name":"Agumon","img":"https://digimon.shadowsmith.com/img/agumon.jpg","level":"Rookie"}]
-             */
+
 
             //add cards element to JSON object in digi Array and add the digiCards Array as value?
             //how to (access and) add element to JSON inside Array?
 
-
             let digiCards = dataSources.cardsAPI.getCardsByName(name);
-            //digiObj.cards = digiCards;
-            //console.log(digiObj);
-            /*
-            -> for name = "agumon" digiCards:
-                [{"name":"Agumon","type":"Digimon","color":"Yellow","stage":"Rookie","digi_type":"Reptile","attribute":"Virus","level":null,"play_cost":null,"evolution_cost":null,"cardrarity":null,"artist":null,"dp":null,"cardnumber":"BO-115","maineffect":null,"soureeffect":null,"set_name":"Series 3 Booster Pack","card_sets":["Series 3 Booster Pack"],"image_url":"https:\/\/images.digimoncard.io\/images\/cards\/BO-115.jpg"},
-                {"name":"ToyAgumon","type":"Digimon","color":"Yellow","stage":"Rookie","digi_type":"Puppet","attribute":"Virus","level":null,"play_cost":null,"evolution_cost":null,"cardrarity":null,"artist":null,"dp":null,"cardnumber":"BO-117","maineffect":null,"soureeffect":null,"set_name":"Series 3 Booster Pack","card_sets":["Series 3 Booster Pack"],"image_url":"https:\/\/images.digimoncard.io\/images\/cards\/BO-117.jpg"},
-             */
 
 
             /*
             return should look like this:
             [{name: digi.name, img: digi.img, level: digi.level, cards: [digiCards]}]
-             */
 
-            //digi = [{... digi}];
+
             //digiObj = digi[0];
             //digiObj.cards = digiCards;
 
-            //digi = [{"name": digi.name, "img": digi.img, "level": digi.level, "cards": digiCards}]
-            //return digiObj;
-            let arr1 = [{ name: digiObj.name, img: "testimg1", level: "testlevel1", cards: digiCards }, { name: "testname", img: "testimg", level: "testlevel", cards: [] }];
-            //return digiObj; //
+            let arr1 = [{ name: digi.at(20), img: "testimg1", level: "testlevel1", cards: digiCards }, { name: "testname", img: "testimg", level: "testlevel", cards: [] }];
+
             return arr1;
         }, //doesn't work yet
 
@@ -84,7 +72,7 @@ const resolvers={
                 /*
                 let diginame=digi.at(i).name;
                 let digiCards = dataSources.cardsAPI.getCardsByName(diginame);
-                digi[i] = {... digi.at(i), cards: digiCards}; */
+                digi[i] = {... digi.at(i), cards: digiCards};
 
                 //Get the value of the name attribute of the digi JSON array at index i
                 //let digiName=digi[i].name;
@@ -105,6 +93,7 @@ const resolvers={
         cards: (digimon, __, {dataSources}) => {
             return dataSources.cardsAPI.getCardsByName(digimon.name);
         }
+    }*/
     }
 }
 

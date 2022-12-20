@@ -6,15 +6,27 @@ class DigimonAPI extends RESTDataSource {
     this.baseURL = 'https://digimon-api.vercel.app/api/digimon/';
   }
 
+  /*
   async getAllDigimon() {
-    let response = await this.get(``)
-    response = response.json();
-    return [response];
+    let response = new Promise(this.get(``));
+    response.then((value) => {
+      return value;
+    }
+    );
+    // do something with the data here
     //turn the promise into an Array data type
+   // return data
+  }*/
+  getAllDigimon(){
+    return this.get(``);
   }
 
   getDigimonByName(name) {
-    return this.get(`name/${name}`);
+    //console.log(this.get(`name/${name}`));
+    let digi = this.get(`name/${name}`);
+    digi.resolve();
+    console.log(digi);
+    return digi
     //turn the promise into an Array data type
   }
 
@@ -22,7 +34,7 @@ class DigimonAPI extends RESTDataSource {
     return this.get(`level/${level}`);
   }
 
-
+  /*
   //COPY PASTE FROM https://www.apollographql.com/tutorials/fullstack-quickstart/connecting-to-data-sources
   async getAllDigimon2() {
     const response = await this.get('');
@@ -46,12 +58,12 @@ class DigimonAPI extends RESTDataSource {
     return Array.isArray(response)
         ? response.map(digimon => this.digimonReducer(digimon))
         : [];
-  }*/
+  }
   getDigimonByName3({name}) {
     return Promise.all(
         name.map(name => this.getDigimonByName2(name)),
     );
-  }
+  }*/
 }
 
 module.exports=DigimonAPI;
