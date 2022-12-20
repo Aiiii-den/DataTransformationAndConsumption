@@ -29,12 +29,14 @@ class DigimonAPI extends RESTDataSource {
       req.onload = function () {
         if (req.status == 200) {
           resolve(req.response);
+          console.log(promise)
         } else {
           reject("There is an Error!");
         }
       };
       req.send();
     });
+    console.log(promise); //WHY IS THE PROMISE STILL PENDING??
     return promise;
   }
 
@@ -55,12 +57,20 @@ class DigimonAPI extends RESTDataSource {
           return digi;
         });*/
     // Promise Chain with multiple then and catch
-    const URL = this.baseURL;
+    const URL = this.baseURL+`name/${name}`;
     let promise = this.getPromise(URL);
     promise.then(result => {
-      let digi = JSON.parse(result);
-      console.log(digi)
-      return digi;
+      //console.log(typeof result);
+      let digi = JSON.parse(result); //WHY IS THE RETURN A FUCKING STRING???????????
+      //console.log(typeof digi);
+      console.log([digi[0]])
+      /*return {
+        name: digi.name,
+        img: digi.img,
+        level: digi.level,
+      };*/
+      return [digi[0]];
+
     }).catch(error => {
       console.log('In the catch', error);
     });
