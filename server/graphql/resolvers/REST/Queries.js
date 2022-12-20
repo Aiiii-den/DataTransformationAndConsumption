@@ -3,14 +3,24 @@ const resolvers= {
 
         //ACCESS DIGIMONAPI
         allDigimon: (_, __, {dataSources}) => {
-            return dataSources.digimonAPI.getAllDigimon();
+            return dataSources.digimonAPI.getAllDigimon()
+                .then(digimons => {
+                    console.log(digimons);
+                    // If the request is successful, fulfill the promise with the data
+                    return digimons;
+                })
+                .catch(error => {
+                    // If there is an error, reject the promise with the error
+                    throw error;
+                });
         },
 
         digimonByName: (_, {name}, {dataSources}) => {
             return dataSources.digimonAPI.getDigimonByName(name)
                 .then(digimon => {
+                    console.log(digimon);
                     // If the request is successful, fulfill the promise with the data
-                    return [digimon[0]];
+                    return digimon;
                 })
                 .catch(error => {
                     // If there is an error, reject the promise with the error
@@ -18,80 +28,92 @@ const resolvers= {
                 });
         },
 
-
         digimonByLevel: (_, {level}, {dataSources}) => {
-            return dataSources.digimonAPI.getDigimonByLevel(level);
+            return dataSources.digimonAPI.getDigimonByLevel(level)
+                .then(digimons => {
+                    console.log(digimons);
+                    // If the request is successful, fulfill the promise with the data
+                    return digimons;
+                })
+                .catch(error => {
+                    // If there is an error, reject the promise with the error
+                    throw error;
+                });
         },
 
 
         //ACCESS CARDSAPI
         allCards: (_, __, {dataSources}) => {
-            return dataSources.cardsAPI.getAllCards();
-        },
-
-        cardsByName: (_, {name}, {dataSources}) => {
-            return dataSources.cardsAPI.getCardsByName(name);
-        },
-
-
-        //COMBINE RESULTS OF BOTH APIs
-        testConjureName: (_, {name}, {dataSources}) => {
-            //let digi = dataSources.digimonAPI.getDigimonByName(name).then(this[0]); // OBJECT TYPE = PROMISE
-            //digi = digi.toString(); // return [object, .., object]
-            //let digiObj = JSON.parse(digi);
-
-            //let digiName = digi[0].name;
-            //-> for name = "Agumon" digi = [{"name":"Agumon","img":"https://digimon.shadowsmith.com/img/agumon.jpg","level":"Rookie"}]
-
-
-            //add cards element to JSON object in digi Array and add the digiCards Array as value?
-            //how to (access and) add element to JSON inside Array?
-
-            //let digiCards = dataSources.cardsAPI.getCardsByName(name)
-
-            //digi.cards = digiCards;
-
-            //ChatGPT Antwort:
-            return dataSources.digimonAPI.getDigimonByName(name)
-                .then(digimon => {
-                    let digiCards = dataSources.cardsAPI.getCardsByName(name)
-                    // If the request is successful, fulfill the promise with the data
-                    let arr1 = [{ name: digimon[0].name, img: digimon[0].img, level: digimon[0].level, cards: digiCards }]
-                     return arr1 //digimon[0];
-                })
-                .catch(error => {
-                    // If there is an error, reject the promise with the error
-                    throw error;
-                });
-            /*
-            let digiCards = dataSources.cardsAPI.getCardsByName(name)
+            return dataSources.cardsAPI.getAllCards()
                 .then(cards => {
+                    console.log(cards);
                     // If the request is successful, fulfill the promise with the data
                     return cards;
                 })
                 .catch(error => {
                     // If there is an error, reject the promise with the error
                     throw error;
-                });*/
+                });
 
-            //let arr1 = [{ name: "name", img: "img", level: "testlevel1", cards: [digiCards[5]] }, { name: "testname", img: "testimg", level: "testlevel", cards: [] }];
-
-            //return arr1;
         },
-        /*
-        return should look like this:
-        [{name: digi.name, img: digi.img, level: digi.level, cards: [digiCards]}]
+
+        cardsByName: (_, {name}, {dataSources}) => {
+            return dataSources.cardsAPI.getCardsByName(name)
+                .then(cards => {
+                    console.log(cards);
+                    // If the request is successful, fulfill the promise with the data
+                    return cards; //STILL NEED TO CREATE A NEW ARRAY SO THAT THE CLIENT CAN ACCESS IT 2.0
+                })
+                .catch(error => {
+                    // If there is an error, reject the promise with the error
+                    throw error;
+                });
+        },
 
 
-        //digiObj = digi[0];
-        //digiObj.cards = digiCards;
+        //COMBINE RESULTS OF BOTH APIs
+        testConjureName: (_, {name}, {dataSources}) => {
 
-        let arr1 = [{ name: digi.at(20), img: "testimg1", level: "testlevel1", cards: digiCards }, { name: "testname", img: "testimg", level: "testlevel", cards: [] }];
+            //Semi ChatGPT Antwort:
+            return dataSources.digimonAPI.getDigimonByName(name)
+                .then(digimon => {
 
-        return arr1;
-    }, //doesn't work yet
+                    function returnDigiCards(name) {
+                        return dataSources.cardsAPI.getCardsByName(name)
+                            .then(cards => {
+                                // If the request is successful, fulfill the promise with the data
+                                return cards; //still need to get this away from pending - can wait for a later day tho
+                            })
+                            .catch(error => {
+                                // If there is an error, reject the promise with the error
+                                throw error;
+                            });
+                    }/*
+                    let digiCards = dataSources.cardsAPI.getCardsByName(name)
+                        .then(cards => {
+                            // If the request is successful, fulfill the promise with the data
+                            return cards; //still need to get this away from pending - can wait for a later day tho
+                        })
+                        .catch(error => {
+                            // If there is an error, reject the promise with the error
+                            throw error;
+                        });*/
 
-    testConjureAll: (_, __, {dataSources}) => {
+                    // If the request is successful, fulfill the promise with the data
+                    //let arr1 = [{ name: digimon[0].name, img: digimon[0].img, level: digimon[0].level, cards: digiCards }]
+                    //console.log(arr1);
+                    digimon[0].cards = returnDigiCards(name);
+                    console.log(digimon[0]);
+                    return  digimon //arr1 //digimon[0];
+                })
+                .catch(error => {
+                    // If there is an error, reject the promise with the error
+                    throw error;
+                });
+        },
+    },
+
+    testConjureAll: (_, __, {dataSources}) => { //Hilfe von Herr Freiheit im Januar?
         let digi = dataSources.digimonAPI.getAllDigimon();
 
         //digi=JSON.parse(digi);
