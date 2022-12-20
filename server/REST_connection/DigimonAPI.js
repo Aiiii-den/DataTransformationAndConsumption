@@ -1,4 +1,5 @@
 const { RESTDataSource } = require('@apollo/datasource-rest');
+var XMLHttpRequest = require('xhr2');
 
 class DigimonAPI extends RESTDataSource {
   constructor() {
@@ -21,12 +22,51 @@ class DigimonAPI extends RESTDataSource {
     return this.get(``);
   }
 
+  getPromise(URL) {
+    let promise = new Promise(function (resolve, reject) {
+      let req = new XMLHttpRequest();
+      req.open("GET", URL);
+      req.onload = function () {
+        if (req.status == 200) {
+          resolve(req.response);
+        } else {
+          reject("There is an Error!");
+        }
+      };
+      req.send();
+    });
+    return promise;
+  }
+
   getDigimonByName(name) {
     //console.log(this.get(`name/${name}`));
-    let digi = this.get(`name/${name}`);
-    digi.resolve();
-    console.log(digi);
-    return digi
+    /*let digi = this.get(`name/${name}`)
+        .then(response => response.json())
+        .then(data => {
+          // do something with the data here
+        })
+        .catch(error => {
+          // handle the error here
+        })
+        .finally(() => {
+          // this code will always be executed, regardless of whether the promise is resolved or rejected
+          //digi=JSON.parse(digi);
+          console.log(digi);
+          return digi;
+        });*/
+    // Promise Chain with multiple then and catch
+    const URL = this.baseURL;
+    let promise = this.getPromise(URL);
+    promise.then(result => {
+      let digi = JSON.parse(result);
+      console.log(digi)
+      return digi;
+    }).catch(error => {
+      console.log('In the catch', error);
+    });
+
+    //console.log(digi);
+    //return digi
     //turn the promise into an Array data type
   }
 
