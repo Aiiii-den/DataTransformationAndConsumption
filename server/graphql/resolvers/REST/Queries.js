@@ -9,8 +9,8 @@ const resolvers={
             return dataSources.digimonAPI.getDigimonByName(name);
         },
 
-        digimonByName2: (_, {name}, {dataSources}) => {
-            return dataSources.digimonAPI.altDigimonByName(name);
+        digimonByLevel: (_, {level}, {dataSources}) => {
+            return dataSources.digimonAPI.getDigimonByLevel(level);
         },
 
         allCards: (_, __, {dataSources}) => {
@@ -19,10 +19,6 @@ const resolvers={
 
         cardsByName : (_, {name}, {dataSources}) => {
             return dataSources.cardsAPI.getCardsByName(name);
-        },
-
-        digimonByLevel: (_, {level}, {dataSources}) => {
-            return dataSources.digimonAPI.getDigimonByLevel(level);
         },
 
         testConjureName: (_, {name}, {dataSources}) => {
