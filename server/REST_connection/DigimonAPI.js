@@ -11,7 +11,7 @@ class DigimonAPI extends RESTDataSource {
   }
 
   getDigimonByName(name){
-    return this.get(`name/${name}`);
+    return this.get(`name/${name}`); //[0]
   }
 
   getDigimonByLevel(level){

@@ -5,7 +5,7 @@ const mutations = require('./MongoDB/Mutations');
 module.exports={
     Query: {
         ...resolvers.Query, 
-        ...mutations.Query,
+        //...mutations.Query,
     },
 
 }
