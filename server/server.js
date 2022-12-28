@@ -4,20 +4,19 @@ const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
 const DigimonAPI = require('./REST/DigimonAPI');
 const CardsAPI = require('./REST/CardsAPI');
-/*
-const MongoDB = "mongodb+srv://dbUser:userdb@digimonapi0.dz1m4an.mongodb.net/?retryWrites=true&w=majority";
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect(MongoDB, {useNewUrlParser: true})
-    .then(() => {
-        console.log("MongoDB connected");
-        server.listen({port: 5000});
-    })
-    .then((res) =>{
-        console.log(`Listening! on localhost:5000`);
-    })
-*/ //MongoDB erstmal ignorieren, Datenbank und User wurden auch schon von mir terminiert, damit keine Sicherheitslücke entsteht
 
+
+// connect to mongoDB
+const DATABASE_URL = process.env.DATABASE_URL;
+mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection failed'));
+db.once('open', () => {
+    console.log('Connection to DB was successful');
+});
 
 const server = new ApolloServer({
     typeDefs,
