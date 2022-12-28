@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TabellenseiteComponent } from './components/tabellenseite/tabellenseite.component';
-import { StartseiteComponent } from './components/startseite/startseite.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {TabellenseiteComponent} from './components/tabellenseite/tabellenseite.component';
+import {StartseiteComponent} from './components/startseite/startseite.component';
 
 @NgModule({
   declarations: [
@@ -19,4 +19,5 @@ import { StartseiteComponent } from './components/startseite/startseite.componen
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
