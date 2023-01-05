@@ -1,2 +1,4 @@
 # ignore theses files
 server/.env
+# ignore these folders
+node_modules/
