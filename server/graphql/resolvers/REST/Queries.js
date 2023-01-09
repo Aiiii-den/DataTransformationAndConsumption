@@ -3,16 +3,17 @@ const resolvers= {
 
         //ACCESS DIGIMONAPI
         allDigimon: (_, __, {dataSources}) => {
+            console.log((dataSources.digimonAPI.getAllDigimon()))
             return dataSources.digimonAPI.getAllDigimon()
-                .then(digimons => {
-                    console.log(digimons);
+                /*.then(digimons => {
+                    console.log(digimons[0]);
                     // If the request is successful, fulfill the promise with the data
                     return digimons;
                 })
                 .catch(error => {
                     // If there is an error, reject the promise with the error
                     throw error;
-                });
+                });*/
         },
 
         digimonByName: (_, {name}, {dataSources}) => {
@@ -59,7 +60,7 @@ const resolvers= {
 
         cardsByName: (_, {name}, {dataSources}) => {
             return dataSources.cardsAPI.getCardsByName(name)
-                .then(cards => {
+               .then(cards => {
                     console.log(cards);
                     // If the request is successful, fulfill the promise with the data
                     return cards; //STILL NEED TO CREATE A NEW ARRAY SO THAT THE CLIENT CAN ACCESS IT 2.0
@@ -103,7 +104,8 @@ const resolvers= {
                     //let arr1 = [{ name: digimon[0].name, img: digimon[0].img, level: digimon[0].level, cards: digiCards }]
                     //console.log(arr1);
                     digimon[0].cards = returnDigiCards(name);
-                    console.log(digimon[0]);
+                    //console.log(digimon[0]);
+                    console.log("1",digimon[0])
                     return  digimon //arr1 //digimon[0];
                 })
                 .catch(error => {
