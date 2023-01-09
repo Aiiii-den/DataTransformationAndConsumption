@@ -75,7 +75,6 @@ const resolvers= {
         //COMBINE RESULTS OF BOTH APIs
         testConjureName: (_, {name}, {dataSources}) => {
 
-            //Semi ChatGPT Antwort:
             return dataSources.digimonAPI.getDigimonByName(name)
                 .then(digimon => {
 
@@ -101,10 +100,8 @@ const resolvers= {
                         });*/
 
                     // If the request is successful, fulfill the promise with the data
-                    //let arr1 = [{ name: digimon[0].name, img: digimon[0].img, level: digimon[0].level, cards: digiCards }]
-                    //console.log(arr1);
+
                     digimon[0].cards = returnDigiCards(name);
-                    //console.log(digimon[0]);
                     console.log("1",digimon[0])
                     return  digimon //arr1 //digimon[0];
                 })
@@ -147,15 +144,6 @@ const resolvers= {
         return digi;
     },//doesn't work properly*/
     },
-
-        /*
-        //TRY AT PARENT CHILD RESOLVER ONCE AGAIN
-        Digimon: {
-            cards: ({digiName}, __, {dataSources}) => {
-                return dataSources.cardsAPI.getCardsByName(digiName.name);
-            }
-        }
-        }*/
 
 }
 module.exports=resolvers;
