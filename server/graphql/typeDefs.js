@@ -6,7 +6,7 @@ module.exports=gql`
     type Digimon {
         name: String!
         img: String!
-        level: String
+        level: String!
         cards: [Cards]
     },
 
@@ -23,25 +23,39 @@ module.exports=gql`
         evolution_cost: Int
     }
 
+    type Favorite {
+        card: Cards!
+        img: String!
+        isFav: Boolean
+    }
+
     type Query {
-        digimons: [Digimon!] 
+        allDigimon: [Digimon] 
         #returns name, img & level aller Digimon der Serie -> Datenabfrage der DigimonAPI
 
-        cards: [Cards!] 
-        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI (in der ./REST/Cards.js sowie Digimon.js definiert)
-
-        cardsByDigimonName(name: String): [Cards!] 
-        #returns alle type Cards Attribute eines spezifischen Digimons (Abfrage mit name)
-
+        digimonByName(name: String): [Digimon]
+        #returns ein Digimon gesucht nach Namen -> Datenabfrage der DigimonAPI
+        
+        digimonByLevel(level: String): [Digimon]
+        #returns Digimon eines bestimmten levels -> Datenabfrage der DigimonAPI
+        
         allCards: [Cards!] 
-        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI (gleiche wie oben, jedoch bloß in ./REST/Cards definiert)
+        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI 
+        
+        cardsByName(name: String): [Cards!] 
+        #returns alle type Cards Attribute eines spezifischen Digimons (Abfrage mit name) -> Datenabfrage der CardsAPI 
+        
+        testConjureName(name: String): [Digimon]
+        #returns alle Digimon (incl cards) Attribut für ein spezifisches Digimon -> Vereinigung beider REST API Rückgaben‚
+        
+        testConjureAll: [Digimon]
+        #returns alle Digimon (incl cards) -> Vereinigung beider REST API Rückgaben
+        
+        Digimon: [Digimon]
+        
+    }
+    
+    type Mutation {
+        addFavorite(cardsName: String): Favorite
     }
 `
-
-/*
-query (img){
-    name {
-        cards
-    }
-} ALTER KOMMENTAR / BRAINSTORMING
-*/
