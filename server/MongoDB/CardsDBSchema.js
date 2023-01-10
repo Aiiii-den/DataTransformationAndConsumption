@@ -1,4 +1,6 @@
-const { model, Schema } = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
 
 const CardsSchema = new Schema({
     cardnumber: ID,
@@ -11,7 +13,10 @@ const CardsSchema = new Schema({
     play_cost: Int,
     evolution_cost: Int,
     img: String,
-    isFav: Boolean,
 });
 
 module.exports=model('Cards', CardsSchema);
+
+/*
+fill db with cards json and add general image later on - ALTER KOMMENTAR / BRAINSTORMING
+*/
