@@ -21,7 +21,7 @@
             "assets": [
               "src/assets/images/logo/logo.png",
               "src/assets/images/hintergrundbild/Hintergrundbild.png",
-              "src/assets/images/kartenrueckseite/kartenrueckseite.png",
+              "src/assets/images/kartenrueckseite/Rueckseite3.png",
               "src/assets"
             ],
             "styles": [
@@ -99,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
