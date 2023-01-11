@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // eine GET-Anfrage
-router.get('/fiw', async(req, res) => {
+router.get('/', async(req, res) => {
 
     res.send({ message: "Test" });
 });
