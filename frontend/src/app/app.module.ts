@@ -6,6 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {TabellenseiteComponent} from './components/tabellenseite/tabellenseite.component';
 import {StartseiteComponent} from './components/startseite/startseite.component';
+import {DigimonausgabeComponent} from './components/digimonausgabe/digimonausgabe.component';
 
 import { GraphQLModule } from './graphql.module';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
@@ -18,6 +19,7 @@ import { InMemoryCache } from '@apollo/client/core';
     AppComponent,
     StartseiteComponent,
     TabellenseiteComponent,
+    DigimonausgabeComponent
 
   ],
   imports: [
