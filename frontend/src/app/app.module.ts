@@ -11,14 +11,14 @@ import { GraphQLModule } from './graphql.module';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache } from '@apollo/client/core';
-import {DigimonausgabeComponent} from "./components/digimonausgabe/digimonausgabe.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     StartseiteComponent,
     TabellenseiteComponent,
-    DigimonausgabeComponent
+
   ],
   imports: [
     BrowserModule,
