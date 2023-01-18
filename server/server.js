@@ -2,7 +2,7 @@ const { ApolloServer } = require('apollo-server');
 
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
-const DigimonAPI = require('./REST/DigimonAPI');
+const DigimonAPI = require('./DigimonAPI');
 const CardsAPI = require('./REST/CardsAPI');
 const mongoose = require('mongoose');
 require('dotenv').config();
