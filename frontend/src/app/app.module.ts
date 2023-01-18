@@ -8,8 +8,7 @@ import {TabellenseiteComponent} from './components/tabellenseite/tabellenseite.c
 import {StartseiteComponent} from './components/startseite/startseite.component';
 import {DigimonausgabeComponent} from './components/digimonausgabe/digimonausgabe.component';
 
-import { GraphQLModule } from './graphql.module';
-import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache } from '@apollo/client/core';
 
@@ -25,25 +24,20 @@ import { InMemoryCache } from '@apollo/client/core';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GraphQLModule,
     HttpClientModule,
     ApolloModule
   ],
-  providers: [
-    {
-      provide: APOLLO_OPTIONS,
-      useFactory(httpLink: HttpLink) {
-        return {
-          cache: new InMemoryCache(),
-          link: httpLink.create({
-            uri: 'http://localhost:4000'
-          })
-        }
-      },
-      deps: [HttpLink]
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(
+    apollo: Apollo,
+    httpLink: HttpLink
+  ){
+    apollo.create({
+      link: httpLink.create({uri: 'http://localhost:4000'}),
+      cache: new InMemoryCache()
+    })
+  }
 }

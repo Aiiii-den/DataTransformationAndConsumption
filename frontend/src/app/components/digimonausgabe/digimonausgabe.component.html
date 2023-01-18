@@ -1,1 +1,9 @@
-<p>digimonausgabe works!</p>
+<div *ngFor="let Cards of cards | async">
+  <div class="card" >
+    <div class="card-body">{{Cards.name}}, {{Cards.attribute}}
+
+      <p class="card-text">{{Cards.level}}</p>
+      <a href="{{Cards.image_url}}" class="card-link"> Go to Cards ...</a>
+    </div>
+  </div>
+</div>

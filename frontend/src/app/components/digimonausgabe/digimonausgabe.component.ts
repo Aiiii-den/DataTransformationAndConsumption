@@ -1,13 +1,28 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Apollo, gql } from 'apollo-angular';
-//import allCards from '../../../../../server/graphql/resolvers/REST/Queries.js';
+import {Component, OnInit} from '@angular/core';
+import {Apollo} from "apollo-angular";
+import {Observable} from "rxjs";
+import {map} from 'rxjs/operators';
 
+import gql from 'graphql-tag';
 
-const GET_POSTS = gql`
-query AllCards {
-  allCards {
-    cardnumber
+import {Cards,Query} from "../../types";
+
+@Component({
+  selector: 'app-digimonausgabe',
+  templateUrl: './digimonausgabe.component.html',
+  styleUrls: ['./digimonausgabe.component.css']
+})
+export class DigimonausgabeComponent implements OnInit {
+
+cards: Observable<Cards[]>;
+  constructor(private apollo:Apollo) { }
+
+  ngOnInit() {
+this.cards = this.apollo.watchQuery<Query>({
+  query: gql`
+  query allCards {
+  allCards{
+  cardnumber
     name
     color
     level
@@ -15,38 +30,12 @@ query AllCards {
     attribute
     image_url
     play_cost
-    evolution_cost
-  }
-}
-`;
-@Component({
-  selector: 'app-digimonausgabe',
-  templateUrl: './digimonausgabe.component.html',
-  styleUrls: ['./digimonausgabe.component.css']
+    evolution_cost}
+  }`
 })
-export class DigimonausgabeComponent implements OnInit, OnDestroy {
-
-  loading: boolean;
-  posts: any;
-
-  private querySubscription: Subscription;
-
-  constructor(private apollo: Apollo) { }
-
-  ngOnInit() {
-    this.querySubscription = this.apollo.watchQuery<any>({
-      query: GET_POSTS
-    })
-      .valueChanges
-      .subscribe(({ data, loading }) => {
-        this.loading = loading;
-        this.posts = data.posts;
-      });
+  .valueChanges
+  .pipe(
+    map(result => result.data.allCards)
+  );
   }
-
-  ngOnDestroy() {
-    this.querySubscription.unsubscribe();
-
-  }
-
 }
