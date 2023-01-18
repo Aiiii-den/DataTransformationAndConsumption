@@ -15,7 +15,7 @@ const CardsSchema = new Schema({
     img: String,
 });
 
-module.exports=model('Cards', CardsSchema);
+module.exports=mongoose.model('Cards', CardsSchema);
 
 /*
 fill db with cards json and add general image later on - ALTER KOMMENTAR / BRAINSTORMING

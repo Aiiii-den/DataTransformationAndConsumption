@@ -111,39 +111,39 @@ const resolvers= {
                 });
         },
     },
+    //fehlerhafte code .. funktioniert noch nicht
+    // testConjureAll: (_, __, {dataSources}) => { //Hilfe von Herr Freiheit im Januar?
+    //     let digi = dataSources.digimonAPI.getAllDigimon();
 
-    testConjureAll: (_, __, {dataSources}) => { //Hilfe von Herr Freiheit im Januar?
-        let digi = dataSources.digimonAPI.getAllDigimon();
+    //     //digi=JSON.parse(digi);
+    //     //for (let i in digi){
 
-        //digi=JSON.parse(digi);
-        //for (let i in digi){
+    //     for(let i = 0; i < digi.length; i++) {
+    //         //let digiName = digi[i];
+    //         //digiName=digiName.name;
 
-        for(let i = 0; i < digi.length; i++) {
-            //let digiName = digi[i];
-            //digiName=digiName.name;
+    //         let digiName = digi.indexOf(i).name;
+    //         let digiCards = dataSources.cardsAPI.getCardsByName(digiName);
+    //         digi.indexOf(i).cards = digiCards;
+    //     }
 
-            let digiName = digi.indexOf(i).name;
-            let digiCards = dataSources.cardsAPI.getCardsByName(digiName);
-            digi.indexOf(i).cards = digiCards;
-        }
+    //         /*
+    //         let diginame=digi.at(i).name;
+    //         let digiCards = dataSources.cardsAPI.getCardsByName(diginame);
+    //         digi[i] = {... digi.at(i), cards: digiCards};
 
-            /*
-            let diginame=digi.at(i).name;
-            let digiCards = dataSources.cardsAPI.getCardsByName(diginame);
-            digi[i] = {... digi.at(i), cards: digiCards};
+    //         //Get the value of the name attribute of the digi JSON array at index i
+    //         //let digiName=digi[i].name;
 
-            //Get the value of the name attribute of the digi JSON array at index i
-            //let digiName=digi[i].name;
+    //         //Consume the digimonAPI with the name of the Digimon at index i
+    //         //let digiCards = dataSources.cardsAPI.getCardsByName(digiName);
 
-            //Consume the digimonAPI with the name of the Digimon at index i
-            //let digiCards = dataSources.cardsAPI.getCardsByName(digiName);
+    //         // Change the value of the cards attribute at index i
+    //         //digi[i].cards = digiCards;
 
-            // Change the value of the cards attribute at index i
-            //digi[i].cards = digiCards;
-
-        return digi;
-    },//doesn't work properly*/
-    },
+    //     return digi;
+    // },//doesn't work properly*/
+    // },
 
 }
 module.exports=resolvers;

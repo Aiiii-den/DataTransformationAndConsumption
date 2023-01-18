@@ -1,11 +1,9 @@
-const resolvers = require('./REST/Queries');
-const mutations = require('./MongoDB/Mutations');
+const resolversQ = require('./REST/Queries');
+const Mutations = require('./MongoDB/Mutations');
+const _ = require('lodash');
 
 
-module.exports={
-    Query: {
-        ...resolvers.Query, 
-        //...mutations.Query,
-    },
-
-}
+module.exports=_.merge(
+    resolversQ,
+    Mutations
+)
