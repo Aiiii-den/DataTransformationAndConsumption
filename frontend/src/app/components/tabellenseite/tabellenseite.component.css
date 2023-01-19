@@ -22,19 +22,9 @@ nav {
   margin: 1.5% 5% 1.5% 5%;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding-bottom: 5%;
-  grid-gap: 5%;
-  margin: 1.5% 5% 1.5% 5%;
-  padding-left: 5%;
-}
-
-.Digimonimage{
 
 
-}
+
 
 .button {
   font-family: Chalkduster;
@@ -55,6 +45,7 @@ input {
 }
 
 section {
+  margin: 3%;
   overflow-x: scroll;
   position: absolute;
   top: 30%;
@@ -76,4 +67,11 @@ a {
   left: 1.5%;
   right: 90%;
   text-shadow: 1px 1px 1px #000000;
+}
+
+.digimoncard{
+  columns: 3 ;
+margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
