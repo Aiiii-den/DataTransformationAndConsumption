@@ -45,7 +45,6 @@ input {
 }
 
 section {
-  margin: 3%;
   overflow-x: scroll;
   position: absolute;
   top: 30%;
@@ -69,9 +68,10 @@ a {
   text-shadow: 1px 1px 1px #000000;
 }
 
+
 .digimoncard{
   columns: 3 ;
-margin-top: 5%;
+  margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
 }
