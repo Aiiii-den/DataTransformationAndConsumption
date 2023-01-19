@@ -22,19 +22,6 @@ nav {
   margin: 1.5% 5% 1.5% 5%;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding-bottom: 5%;
-  grid-gap: 5%;
-  margin: 1.5% 5% 1.5% 5%;
-  padding-left: 5%;
-}
-
-.Digimonimage{
-
-
-}
 
 .button {
   font-family: Chalkduster;
@@ -59,8 +46,8 @@ section {
   position: absolute;
   top: 30%;
   bottom: 0%;
-  left: 0%;
-  right: 0%;
+  left: 8%;
+  right: 7%;
 
 }
 
@@ -76,4 +63,12 @@ a {
   left: 1.5%;
   right: 90%;
   text-shadow: 1px 1px 1px #000000;
+}
+
+img {float:right;
+  margin-right: 5%;
+  margin-bottom: 5%;
+margin-left: 0%;
+margin-top: 0%;
+
 }

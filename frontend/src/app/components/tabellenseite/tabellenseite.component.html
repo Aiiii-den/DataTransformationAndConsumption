@@ -11,15 +11,13 @@
 
 <body>
 <section class="wrapper">
-  <div class="Digimoncard">
-    <div class="Digimonimage">
+
       <div *ngFor="let Digimon of digimon | async">
-        <div class="id" >
-          <p><img src="{{Digimon.img}}">{{Digimon.name}}</p>
-        </div>
+
+          <img src="{{Digimon.img}}">
+
       </div>
-  </div>
-  </div>
+
 </section>
 <a href="../startseite">zurück</a>
 </body>
