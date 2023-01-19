@@ -13,99 +13,12 @@
 <section class="wrapper">
   <div class="Digimoncard">
     <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
+      <div *ngFor="let Digimon of digimon | async">
+        <div class="id" >
+          <p><img src="{{Digimon.img}}">{{Digimon.name}}</p>
+        </div>
+      </div>
   </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
-  </div>
-  <div class="Digimoncard">
-    <div class="Digimonimage">
-      <img src="../../../assets/images/logo/logo.png">
-    </div>
-    <div class="Digimonname">
-      <p>Digimon</p>
-    </div>
   </div>
 </section>
 <a href="../startseite">zurück</a>

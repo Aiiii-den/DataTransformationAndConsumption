@@ -31,33 +31,9 @@ nav {
   padding-left: 5%;
 }
 
-.Digimoncard {
-  height: 300px;
-  width: 280px;
-  border: 1px none black;
-  background-color: #fffefe;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 1%;
-  border-radius: 5%;
-}
+.Digimonimage{
 
-.Digimonimage img {
-  display: block;
-  margin: auto;
-  height: 50%;
-  padding-top: 4%;
-  position: relative;
-}
 
-.Digimonimage {
-  height: 250px;
-  width: 280px;
-}
-
-.Digimonname {
-  text-align: center;
-  padding: 1%;
-  font-family: Verdana;
 }
 
 .button {
@@ -81,10 +57,11 @@ input {
 section {
   overflow-x: scroll;
   position: absolute;
-  top: 36%;
+  top: 28%;
   bottom: 0%;
   left: 0%;
   right: 0%;
+
 }
 
 a {
