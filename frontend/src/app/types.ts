@@ -4,6 +4,11 @@ export type Digimon = {
   level;
 }
 
+export type DigimonByName = {
+  name;
+}
+
 export type Query = {
+  digimonByName: DigimonByName[];
   allDigimon: Digimon[];
 }
