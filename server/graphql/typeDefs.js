@@ -45,13 +45,8 @@ module.exports=gql`
         cardsByName(name: String): [Cards!] 
         #returns alle type Cards Attribute eines spezifischen Digimons (Abfrage mit name) -> Datenabfrage der CardsAPI 
         
-        testConjureName(name: String): [Digimon]
-        #returns alle Digimon (incl cards) Attribut für ein spezifisches Digimon -> Vereinigung beider REST API Rückgaben‚
-        
-        testConjureAll: [Digimon]
-        #returns alle Digimon (incl cards) -> Vereinigung beider REST API Rückgaben
-        
-        Digimon: [Digimon]
+        completeDigimonByName(name: String): [Digimon]
+        #returns alle Digimon (incl cards) Attribut für ein spezifisches Digimon -> Vereinigung beider REST API Rückgaben
         
     }
     
