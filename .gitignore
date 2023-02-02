@@ -1,4 +1,10 @@
 # ignore theses files
 server/.env
+server/.DS_Store
+.DS_Store
+
 # ignore these folders
-node_modules/
+server/node_modules/
+server/MongoDB/node_modules/
+frontend/node_modules/
+.idea
