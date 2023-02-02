@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Observable} from "rxjs";
-import {DigimonByName, Query} from "../../types";
+import {Digimon, Query} from "../../types";
 import {Apollo} from "apollo-angular";
 import gql from "graphql-tag";
 import {map} from "rxjs/operators";
@@ -12,7 +12,7 @@ import {map} from "rxjs/operators";
 })
 export class StartseiteComponent {
 
-  digimon: Observable<DigimonByName[]>;
+  digimon: Observable<Digimon[]>;
 
   constructor(private apollo: Apollo) {
   }

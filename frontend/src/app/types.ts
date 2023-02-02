@@ -4,11 +4,28 @@ export type Digimon = {
   level;
 }
 
-export type DigimonByName = {
+export type Cards = {
+  cardnumber;
   name;
+  color;
+  level;
+  digi_type;
+  attribute;
+  image_url;
+  play_cost;
+  evolution_cost;
+
+}
+
+export type DigimonByName1 = {
+  name;
+  img;
+  level;
+  cards: Cards[];
 }
 
 export type Query = {
-  digimonByName: DigimonByName[];
+  digimonByName2: DigimonByName1[];
   allDigimon: Digimon[];
+  alleCards: Cards[];
 }

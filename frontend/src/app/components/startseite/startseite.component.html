@@ -4,16 +4,17 @@
 
 <body>
 <div class="searchbar">
-  <form action="#">
-  <input type="search" list="DigimonName"  placeholder="Suche dein Digimon" size="38">
-  <datalist id ="DigimonName">
+  <form action = "../digimonausgabe" method="GET" >
+  <input type="text" list="DigimonName" id="name" name="name" placeholder="Suche dein Digimon" size="38">
 
-    <option *ngFor="let Digimon of digimon | async" value="{{Digimon.name}}">
+    <datalist id ="DigimonName">
 
-  </datalist>
-<form action = "../digimonausgabe">
+      <option *ngFor="let Digimon of digimon | async" value="{{Digimon.name}}">
+
+    </datalist>
+
   <button type="submit" id="searchbutton">🔎</button>
-  </form>
+
   </form>
 </div>
 

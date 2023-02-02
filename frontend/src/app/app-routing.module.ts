@@ -14,6 +14,7 @@ const routes: Routes = [
   },
   {path: 'startseite', component: StartseiteComponent},
   {path: 'tabellenseite', component: TabellenseiteComponent},
+
   {path: 'digimonausgabe', component: DigimonausgabeComponent}
 ];
 @NgModule({

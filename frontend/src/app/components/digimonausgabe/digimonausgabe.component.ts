@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 
 import gql from 'graphql-tag';
 
-import {Digimon,Query} from "../../types";
+import {DigimonByName1,Query} from "../../types";
 
 @Component({
   selector: 'app-digimonausgabe',
@@ -14,23 +14,38 @@ import {Digimon,Query} from "../../types";
 })
 export class DigimonausgabeComponent implements OnInit {
 
-digimon: Observable<Digimon[]>;
-  constructor(private apollo:Apollo) { }
+  digimonname3: Observable<DigimonByName1[]>;
 
-  ngOnInit() {
-this.digimon = this.apollo.watchQuery<Query>({
-  query: gql`
- query AllDigimon {
-  allDigimon {
+  constructor(private apollo: Apollo) {
+  }
+
+  ngOnInit(): void {
+
+    this.digimonname3 = this.apollo.watchQuery<Query>({
+      query: gql`
+ query DigimonByName($name: String) {
+  digimonByName(name: $name) {
+    name
     img
     level
-    name
+    cards {
+      cardnumber
+      name
+      color
+      level
+      digi_type
+      attribute
+      image_url
+      play_cost
+      evolution_cost
+    }
   }
 }`
-})
-  .valueChanges
-  .pipe(
-    map(result => result.data.allDigimon)
-  );
+    })
+      .valueChanges
+      .pipe(
+        map(result => result.data.digimonByName2)
+      );
   }
 }
+
