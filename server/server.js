@@ -3,12 +3,13 @@ const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
 const DigimonAPI = require('./REST/DigimonAPI');
 const CardsAPI = require('./REST/CardsAPI');
+
+
 const mongoose = require('mongoose');
 require('dotenv').config();
 
 
-
-// connect to mongoDB
+ //connect to mongoDB
 const DATABASE_URL = process.env.DATABASE_URL;
 mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
