@@ -4,15 +4,25 @@ const FavoriteDBSchema = require("../../../MongoDB/FavoriteDBSchema");
 //create Mutation for add favorite digimon to the FavoriteSchema
 const Mutations = {
      Mutation:{
+
         async addFavorite(parent, args, context, info){
-            const card =  new FavoriteDBSchema({
-                username: args.username,
-                cardname: args.cardname, 
-            });
-            await card.save();
-            console.log(card);
-            return card;
-        },
+                const exist =  await FavoriteDBSchema.findOne({username: args.username});
+                if(exist != null){
+                    throw new Error(`${args.username} existiert bereits!`)
+                }
+                if(args.cardname == ""){
+                    throw new Error("cardname darf nicht leer sein!!")
+                }
+                const card =  new FavoriteDBSchema({
+                    username: args.username,
+                    cardname: args.cardname,
+                });
+                await card.save();
+                console.log(card);
+                return card;
+        },        
+            
+
 
         async getAllFavorites(req, res){
             return await FavoriteDBSchema.find({})
