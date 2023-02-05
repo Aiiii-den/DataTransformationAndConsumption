@@ -1,9 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Apollo} from "apollo-angular";
 import {Observable} from "rxjs";
-import {map} from 'rxjs/operators';
-
-import gql from 'graphql-tag';
 
 import {DigimonByName1,Query} from "../../types";
 
@@ -20,32 +17,39 @@ export class DigimonausgabeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    var name = 'Koromon';
+    var query = `query TestConjureName($name: String) {
+      testConjureName(name: $name) {
+        name
+        img
+        level
+        cards {
+          cardnumber
+          name
+          color
+          level
+          digi_type
+          attribute
+          image_url
+          play_cost
+          evolution_cost
+        }
+      }
+    }`
 
-    this.digimonname3 = this.apollo.watchQuery<Query>({
-      query: gql`
- query DigimonByName($name: String) {
-  digimonByName(name: $name) {
-    name
-    img
-    level
-    cards {
-      cardnumber
-      name
-      color
-      level
-      digi_type
-      attribute
-      image_url
-      play_cost
-      evolution_cost
-    }
-  }
-}`
+
+    fetch('http://localhost:4000/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query,
+        variables: {name},
+      })
     })
-      .valueChanges
-      .pipe(
-        map(result => result.data.digimonByName2)
-      );
+      .then(r => r.json())
+      .then(data => console.log('data returned:', data));
   }
 }
 
