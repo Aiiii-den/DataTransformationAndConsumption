@@ -9,4 +9,4 @@ const DigimonSchema = new Schema({
     level: String,
 });
 
-module.exports=model('Digimon', DigimonSchema);
+module.exports=mongoose.model('Digimon', DigimonSchema);

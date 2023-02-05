@@ -24,9 +24,8 @@ module.exports=gql`
     }
 
     type Favorite {
-        card: Cards!
-        img: String!
-        isFav: Boolean
+        username: String!,
+        cardname: String!,
     }
 
     type Query {
@@ -51,6 +50,11 @@ module.exports=gql`
     }
     
     type Mutation {
-        addFavorite(cardsName: String): Favorite
+        addFavorite(username: String, cardname: String): Favorite!,
+        updateFavoriteByUsername(username: String!, cardname: String!): Favorite!
+        getAllFavorites: [Favorite]
+        deleteFavoriteById(_id: ID!): Favorite
+        getFavoriteByUsername(username: String): Favorite
+        deleteFavotiteByUsername(username: String): Favorite
     }
 `

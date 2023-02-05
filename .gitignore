@@ -4,6 +4,7 @@ server/.DS_Store
 .DS_Store
 
 # ignore these folders
+server/node_modules
 server/node_modules/
 server/MongoDB/node_modules/
 frontend/node_modules/
