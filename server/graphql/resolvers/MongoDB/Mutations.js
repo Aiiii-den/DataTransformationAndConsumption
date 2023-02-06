@@ -1,4 +1,4 @@
-const FavoriteDBSchema = require("../../../MongoDB/FavoriteDBSchema");
+const FavoriteDBSchema = require("../../../SchemaDB/FavoriteDBSchema");
 //const Favorite = FavoriteDBSchema.db.collection('FavoriteCard');
 
 //create Mutation for add favorite digimon to the FavoriteSchema
