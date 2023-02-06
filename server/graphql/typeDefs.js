@@ -51,10 +51,13 @@ module.exports=gql`
     
     type Mutation {
         addFavorite(username: String, cardname: String): Favorite!,
-        updateFavoriteByUsername(username: String!, cardname: String!): Favorite!
+        updateFavoriteByUsername(username: String!, cardname: String!): Favorite! 
+    }
+    
+    type Favorites {
         getAllFavorites: [Favorite]
-        deleteFavoriteById(_id: ID!): Favorite
         getFavoriteByUsername(username: String): Favorite
-        deleteFavotiteByUsername(username: String): Favorite
+        deleteFavoriteById(_id: ID!): Favorite
+        deleteFavoriteByUsername(username: String): Favorite
     }
 `

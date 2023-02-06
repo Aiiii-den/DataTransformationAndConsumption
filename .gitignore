@@ -6,6 +6,6 @@ server/.DS_Store
 # ignore these folders
 server/node_modules
 server/node_modules/
-server/MongoDB/node_modules/
+server/SchemaDB/node_modules/
 frontend/node_modules/
 .idea
