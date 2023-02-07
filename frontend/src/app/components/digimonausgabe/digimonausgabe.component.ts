@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Apollo} from "apollo-angular";
-import {Observable} from "rxjs";
 
-import {DigimonByName1,Query} from "../../types";
 
 @Component({
   selector: 'app-digimonausgabe',
@@ -10,8 +8,6 @@ import {DigimonByName1,Query} from "../../types";
   styleUrls: ['./digimonausgabe.component.css']
 })
 export class DigimonausgabeComponent implements OnInit {
-
-  digimonname3: Observable<DigimonByName1[]>;
 
   constructor(private apollo: Apollo) {
   }
@@ -49,7 +45,9 @@ export class DigimonausgabeComponent implements OnInit {
       })
     })
       .then(r => r.json())
-      .then(data => console.log('data returned:', data));
-  }
-}
+      .then(data =>  document.write(JSON.stringify(data)));
 
+
+  }
+
+}
