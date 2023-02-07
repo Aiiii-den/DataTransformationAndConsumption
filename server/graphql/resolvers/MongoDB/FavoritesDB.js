@@ -2,9 +2,8 @@ const FavoriteDBSchema = require("../../../SchemaDB/FavoriteDBSchema");
 //const Favorite = FavoriteDBSchema.db.collection('FavoriteCard');
 
 //create Favorites for add favorite digimon to the FavoriteSchema
-const query = {
-    Favorites:{
-
+const resolvers = {
+    Query: {
         async getAllFavorites(){
             return await FavoriteDBSchema.find({})
         },
@@ -22,4 +21,4 @@ const query = {
 
     }
 }
-module.exports=query;
+module.exports=resolvers;

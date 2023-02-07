@@ -23,6 +23,7 @@ module.exports=gql`
         evolution_cost: Int
     }
 
+    #bitte noch kommentieren
     type Favorite {
         username: String!,
         cardname: String!,
@@ -47,17 +48,27 @@ module.exports=gql`
         completeDigimonByName(name: String): [Digimon]
         #returns alle Digimon (incl cards) Attribut für ein spezifisches Digimon -> Vereinigung beider REST API Rückgaben
         
+        getAllFavorites: [Favorite]
+        #bitte noch kommentieren
+        
+        getFavoriteByUsername(username: String): Favorite
+        #bitte noch kommentieren
+        
+        deleteFavoriteById(_id: ID!): Favorite
+        #bitte noch kommentieren
+        
+        deleteFavoriteByUsername(username: String): Favorite
+        #bitte noch kommentieren
+        
     }
     
     type Mutation {
-        addFavorite(username: String, cardname: String): Favorite!,
+        addFavorite(username: String, cardname: String): Favorite!
+        #bitte noch kommentieren
+        
         updateFavoriteByUsername(username: String!, cardname: String!): Favorite! 
+        #bitte noch kommentieren
+       
     }
-    
-    type Favorites {
-        getAllFavorites: [Favorite]
-        getFavoriteByUsername(username: String): Favorite
-        deleteFavoriteById(_id: ID!): Favorite
-        deleteFavoriteByUsername(username: String): Favorite
-    }
+
 `
