@@ -50,11 +50,36 @@ module.exports=gql`
     }
     
     type Mutation {
-        addFavorite(username: String, cardname: String): Favorite!,
-        updateFavoriteByUsername(username: String!, cardname: String!): Favorite!
+        addFavorite(username: String, cardname: String): Payload!,
+        updateFavoriteByUsername(username: String!, cardname: String!): Payload!
         getAllFavorites: [Favorite]
-        deleteFavoriteById(_id: ID!): Favorite
-        getFavoriteByUsername(username: String): Favorite
-        deleteFavotiteByUsername(username: String): Favorite
+        deleteFavoriteById(_id: ID!): Payload
+        getFavoriteByUsername(username: String): Payload
+        deleteFavotiteByUsername(username: String): Payload
     }
+
+
+    #__typename für Error
+    union Payload = Favorite |  InputCannotBeNull | UserAlreadyExists | UserNotFound | IDNotFound
+
+    
+    #parent typename
+    interface Error{
+    message:String!
+    }
+
+    #typename
+    type InputCannotBeNull implements Error{
+        message: String!
+    },
+    type UserAlreadyExists implements Error{
+        message: String!
+    },
+    type UserNotFound implements Error{
+        message: String!
+    },
+    type IDNotFound implements Error{
+        message: String!
+    },
+    
 `
