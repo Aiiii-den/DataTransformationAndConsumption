@@ -13,7 +13,11 @@ export class DigimonausgabeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    var name = 'Koromon';
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const value_for_name = urlParams.get('name')
+    console.log(value_for_name);
+    var name = value_for_name;
     var query = `query TestConjureName($name: String) {
       testConjureName(name: $name) {
         name
@@ -46,7 +50,6 @@ export class DigimonausgabeComponent implements OnInit {
     })
       .then(r => r.json())
       .then(data =>  document.write(JSON.stringify(data)));
-
 
   }
 
