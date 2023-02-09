@@ -2,23 +2,39 @@
 <header>
   <h1>Digimon Übersicht</h1>
 </header>
-<!-- Tabelle mit Suchfunktion, Filterbutton, Sortierbutton und Testbefuellung-->
+<!-- Tabelle mit Suchfunktion, Filterbutton, Sortierbutton-->
 <nav>
-  <input type="text" id="textfield" name="textfield" placeholder="Suche dein Digimon!">
-  <button class="button" type="submit">🔎</button>
-  <button class="button">Filter</button>
-  <button class="button">Sortieren</button>
+  <div class="searchbar">
+    <form action="../digimonausgabe" method="GET">
+      <input type="text" list="DigimonName" id="name" name="name" placeholder="Suche dein Digimon" size="38">
+
+      <datalist id="DigimonName">
+
+        <option *ngFor="let Digimon of digimon | async" value="{{Digimon.name}}">
+
+      </datalist>
+
+      <button type="submit" id="searchbutton" class="button">🔎</button>
+    </form>
+  </div>
+
+  <div class="selectfilso">
+    <select class="filso filtern">
+      <option value="" disabled selected hidden>Filtern</option>
+    </select>
+    <select class="filso">
+      <option value="" disabled selected hidden>Sortieren</option>
+    </select>
+  </div>
 </nav>
 
 <body>
 <section class="digimoncard">
-      <div *ngFor="let Digimon of digimon | async">
+  <div *ngFor="let Digimon of digimon | async">
 
-        <p><img src="{{Digimon.img}}"><br> {{Digimon.name}} </p>
+    <p><img src="{{Digimon.img}}"><br> {{Digimon.name}} </p>
 
-
-      </div>
-
+  </div>
 </section>
 <a href="../startseite">zurück</a>
 </body>
