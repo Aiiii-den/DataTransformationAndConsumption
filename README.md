@@ -56,6 +56,10 @@ ng serve
 ### Frontend 
 
 Wenn Sie unsere Anwendung nutzen wollen dann öffen Sie im Browser  http://localhost:4200/. Jetzt können Sie das Frontend mit der Backendanbindung nutzen.
+Aufgebaut ist die Benutzeroberfläche mit einer Startseite, auf der man eine Suchanfrage durchführen kann, einer Tabellenseite auf der alle gewünschten Digimons aufgelistet sind. Möchte man zurück auf die Startseite, ist dies möglich, in dem man die orange Schaltfläche betätigt.
+
+Diese Funktionen stehen dem Anwender zur Verfügung zum jetzigen Zeitpunkt (09.09.2023). Weitere Funktionen mit denen man die Anwendung erweitern kann, wären, dass der Anwender auf der Tabellenseite due Suchanfragen zu verfeinern, in dem man eine Filterfunktion nutzt oder die Ergebnisse sortiert. Auch steht die Möglichkeit offen ein Login hinzuzufügen, damit man sich mit einem Namen und Passwort anmelden kann und die Digimons Favorisieren kann und eine Kartenseite auf der alle wichtigen Informationen nochmal ausführlich ausgelistet sind.
+
 
 ### Backend
 
