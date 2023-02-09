@@ -1,8 +1,8 @@
 const { ApolloServer } = require('apollo-server');
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
-const DigimonAPI = require('./REST/DigimonAPI');
-const CardsAPI = require('./REST/CardsAPI');
+const DigimonAPI = require('./REST_APIs/DigimonAPI');
+const CardsAPI = require('./REST_APIs/CardsAPI');
 
 
 const mongoose = require('mongoose');

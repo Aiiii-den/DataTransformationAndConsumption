@@ -23,6 +23,7 @@ module.exports=gql`
         evolution_cost: Int
     }
 
+    #Schemata für die favorisierten Digimons aus der DB
     type Favorite {
         username: String!,
         cardname: String!,
@@ -47,14 +48,27 @@ module.exports=gql`
         completeDigimonByName(name: String): [Digimon]
         #returns alle Digimon (incl cards) Attribut für ein spezifisches Digimon -> Vereinigung beider REST API Rückgaben
         
+        getAllFavorites: [Favorite]
+        #returns alle in der DB gespeicherten Favorites mit Username und Cardname aus der DB
+        
+        getFavoriteByUsername(username: String): Favorite
+        #returns einen Favorite von dem eigegeben Username aus der DB
+        
+        deleteFavoriteById(_id: ID!): Favorite
+        #löscht ein Favorite aus der DB anahnd der ID
+        
+        deleteFavoriteByUsername(username: String): Favorite
+        #löscht ein Favorite aus der DB anhand des Usernames 
+        
     }
     
     type Mutation {
-        addFavorite(username: String, cardname: String): Favorite!,
-        updateFavoriteByUsername(username: String!, cardname: String!): Favorite!
-        getAllFavorites: [Favorite]
-        deleteFavoriteById(_id: ID!): Favorite
-        getFavoriteByUsername(username: String): Favorite
-        deleteFavotiteByUsername(username: String): Favorite
+        addFavorite(username: String, cardname: String): Favorite!
+        #fügt ein Favorite mit Username und Cardname der DB hinzu
+        
+        updateFavoriteByUsername(username: String!, cardname: String!): Favorite! 
+        #ersetzt bei dem angegebenen Username den Cardname in der DB
+       
     }
+
 `
