@@ -2,7 +2,7 @@
 
 ## Allgemeine Informationen
 
-Unsere Anwendung ist aus einem Projekt entstanden, wo es darum ging zwei verschiedene REST_APIs miteinander zu verschmelzen. Unsere erst API ist die [Digimon API](https://digimon-api.vercel.app/) und unsere zweite ist die [Digimon TCG API](https://documenter.getpostman.com/view/14059948/TzecB4fH).
+Unsere Anwendung ist aus einem Projekt entstanden, wo es darum ging zwei verschiedene REST_APIs miteinander zu verschmelzen. Unsere erste API ist die [Digimon API](https://digimon-api.vercel.app/) und unsere zweite ist die [Digimon TCG API](https://documenter.getpostman.com/view/14059948/TzecB4fH).
 
 Es soll dem Anwender ermöglichen mithilfe einer einzigen Abfrage Daten aus beiden Schnittstellen zu ziehen. 
 Beide APIs liefern uns unterschiedliche Informationen. Die Digimon API gibt uns das Level, den Namen und ein Bild zurück. Bei der Digimon TCG API erhalten wir Daten zu den jeweiligen Karten, die es zu einem Digimon gibt. (Wie z.Bsp. Name des Digimons, Name der Karte, Stand des Digimons, ein Bild der Karte sowie noch weitere.) Über das Attribut Name verschmelzen wir die Schnittstellen miteinander. So können wir Namen, Level, Bild und alle Karten, die es zum Digimon gibt, ausgeben lassen.
@@ -19,7 +19,7 @@ Möchte man zurück auf die Startseite, ist dies möglich, in dem man die orange
 
 Auf der Kartenseite Seite, wird, nach dem man einer der Schaltflächen mit den Digimons anklickt, ausführlich die Informationen des jeweiligen Digimons aufgelistet. 
 [Bild von den Karten einfügen]
-(Bei Belieben kann man sich gewünschten Karten speichern, in dem man Sie ‚favorisiert.‘)
+
 
 ## Download 
 
