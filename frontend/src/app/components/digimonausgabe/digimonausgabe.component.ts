@@ -49,7 +49,10 @@ export class DigimonausgabeComponent implements OnInit {
       })
     })
       .then(r => r.json())
-      .then(data =>  document.write(JSON.stringify(data)));
+      .then(data => document.body.append(JSON.stringify(data)))
+
+    document.body.style.textAlign = 'center';
+    document.body.style.fontFamily = 'Chalkduster';
 
   }
 
