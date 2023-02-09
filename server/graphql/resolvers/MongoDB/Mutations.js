@@ -73,6 +73,13 @@ async deleteFavotiteByUsername(parent, args){
 },
 
 async getFavoriteByUsername(parent, args) {
+    const exist =  await FavoriteDBSchema.findOne({username: args.username});
+    if(exist == null){
+        return {
+            __typename: "UserNotFound",
+            message: `Der Username: ${args.username}  wurde nicht gefunden!`
+        }
+      }
     return await FavoriteDBSchema.findOne({username: args.username});
 },
     }

@@ -59,7 +59,7 @@ module.exports=gql`
     }
 
 
-    #__typename für Error
+    #__typename für Error 
     union Payload = Favorite |  InputCannotBeNull | UserAlreadyExists | UserNotFound | IDNotFound
 
     
