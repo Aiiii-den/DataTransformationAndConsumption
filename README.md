@@ -7,6 +7,20 @@ Unsere Anwendung ist aus einem Projekt entstanden, wo es darum ging zwei verschi
 Es soll dem Anwender ermöglichen mithilfe einer einzigen Abfrage Daten aus beiden Schnittstellen zu ziehen. 
 Beide APIs liefern uns unterschiedliche Informationen. Die Digimon API gibt uns das Level, den Namen und ein Bild zurück. Bei der Digimon TCG API erhalten wir Daten zu den jeweiligen Karten, die es zu einem Digimon gibt. (Wie z.Bsp. Name des Digimons, Name der Karte, Stand des Digimons, ein Bild der Karte sowie noch weitere.) Über das Attribut Name verschmelzen wir die Schnittstellen miteinander. So können wir Namen, Level, Bild und alle Karten, die es zum Digimon gibt, ausgeben lassen.
 
+Aufgebaut ist die Benutzeroberfläche mit einer Startseite, auf der man eine Suchanfrage durchführen kann, einer Tabellenseite auf der alle gewünschten Digimons aufgelistet sind.
+
+![image](https://user-images.githubusercontent.com/82514219/217797024-ea71a286-cd28-461e-afc7-451c9778b7df.png)
+
+Auf der Tabellenseite Suchanfrage, ist es dem Nutzer/in ermöglichst, die vorherige Suchanfrage zu verfeinern, in dem er/Sie die Filterfunktion nutzt oder die Ergebnisse sortiert. 
+
+![image](https://user-images.githubusercontent.com/82514219/217797148-8842197e-4870-430e-917c-2f7b3207df7c.png)
+
+Möchte man zurück auf die Startseite, ist dies möglich, in dem man die orange Schaltfläche (siehe Abb.: unten rechts ‚zurück‘) betätigt.
+
+Auf der Kartenseite Seite, wird, nach dem man einer der Schaltflächen mit den Digimons anklickt, ausführlich die Informationen des jeweiligen Digimons aufgelistet. 
+[Bild von den Karten einfügen]
+(Bei Belieben kann man sich gewünschten Karten speichern, in dem man Sie ‚favorisiert.‘)
+
 ## Download 
 
 Um die Anwendung ‚DataTransformationAndConsumption ‘ zu starten, ist es zunächst notwendig den Code über github herunterzuladen.
