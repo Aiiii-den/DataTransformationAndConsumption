@@ -4,8 +4,18 @@
 
 <body>
 <div class="searchbar">
-  <input type="search" id="suche" placeholder="Suche dein Digimon" size="38">
+  <form action = "../digimonausgabe" method="GET" >
+  <input type="text" list="DigimonName" id="name" name="name" placeholder="Suche dein Digimon" size="38">
+
+    <datalist id ="DigimonName">
+
+      <option *ngFor="let Digimon of digimon | async" value="{{Digimon.name}}">
+
+    </datalist>
+
   <button type="submit" id="searchbutton">🔎</button>
+
+  </form>
 </div>
 
 <div class="kartenrueckseite">

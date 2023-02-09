@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {TabellenseiteComponent} from "./components/tabellenseite/tabellenseite.component";
 import {StartseiteComponent} from "./components/startseite/startseite.component";
+import {DigimonausgabeComponent} from "./components/digimonausgabe/digimonausgabe.component";
 
 const routes: Routes = [
   {
@@ -12,7 +13,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {path: 'startseite', component: StartseiteComponent},
-  {path: 'tabellenseite', component: TabellenseiteComponent}
+  {path: 'tabellenseite', component: TabellenseiteComponent},
+
+  {path: 'digimonausgabe', component: DigimonausgabeComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

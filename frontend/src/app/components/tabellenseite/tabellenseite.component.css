@@ -1,7 +1,14 @@
+html {
+  background-color: #dadada;
+  background-size: 100% 100%;
+  margin: -1em;
+}
+
 header {
   background-color: rgb(63, 76, 196);
   padding-top: 0.1em;
   height: 11.5em;
+  margin: 0;
 }
 
 h1 {
@@ -13,7 +20,7 @@ h1 {
 
 nav {
   display: grid;
-  grid-template-columns: 5fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   column-gap: 2%;
   background-color: rgb(177, 177, 183);
   text-align: center;
@@ -22,45 +29,16 @@ nav {
   margin: 1.5% 5% 1.5% 5%;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding-bottom: 5%;
-  grid-gap: 5%;
-  margin: 1.5% 5% 1.5% 5%;
-  padding-left: 5%;
+.buttonsuche {
+  background-color: #ffffff;
+  font-size: 20px;
+  padding: 10px 10px;
+  border: 1px;
+  border-radius: 10px;
+  margin: 5px;
 }
 
-.Digimoncard {
-  height: 300px;
-  width: 280px;
-  border: 1px none black;
-  background-color: #fffefe;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 1%;
-  border-radius: 5%;
-}
-
-.Digimonimage img {
-  display: block;
-  margin: auto;
-  height: 50%;
-  padding-top: 4%;
-  position: relative;
-}
-
-.Digimonimage {
-  height: 250px;
-  width: 280px;
-}
-
-.Digimonname {
-  text-align: center;
-  padding: 1%;
-  font-family: Verdana;
-}
-
-.button {
+.filso {
   font-family: Chalkduster;
   background-color: #ffffff;
   color: rgb(239, 133, 63);
@@ -68,6 +46,8 @@ nav {
   padding: 10px 10px;
   border: 1px;
   border-radius: 10px;
+  text-align: center;
+  margin: 5px;
 }
 
 input {
@@ -76,22 +56,21 @@ input {
   padding: 10px 30px 10px 40px;
   border: 1px;
   border-radius: 10px;
+
 }
 
 section {
-  overflow-x: scroll;
-  position: absolute;
-  top: 36%;
+  top: 30%;
   bottom: 0%;
-  left: 0%;
-  right: 0%;
+  left: 8%;
+  right: 7%;
 }
 
 a {
   font-family: "Chalkduster";
   text-decoration: none;
   color: #ef853f;
-  position: absolute;
+  position: fixed;
   font-size: 20px;
   font-weight: bold;
   top: 93%;
@@ -99,4 +78,21 @@ a {
   left: 1.5%;
   right: 90%;
   text-shadow: 1px 1px 1px #000000;
+}
+
+.digimoncard {
+  columns: 3;
+  margin: 5% 5% 5% 5%;
+}
+
+img {
+  height: 400px;
+}
+
+p {
+  text-align: center;
+  font-size: 1.5em;
+  font-family: "Chalkduster";
+  background-color: white;
+  border-radius: 10px;
 }
