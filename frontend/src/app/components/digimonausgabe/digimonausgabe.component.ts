@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Apollo} from "apollo-angular";
 
 
+
 @Component({
   selector: 'app-digimonausgabe',
   templateUrl: './digimonausgabe.component.html',
@@ -18,8 +19,8 @@ export class DigimonausgabeComponent implements OnInit {
     const value_for_name = urlParams.get('name')
     console.log(value_for_name);
     var name = value_for_name;
-    var query = `query TestConjureName($name: String) {
-      testConjureName(name: $name) {
+    var query = `query CompleteDigimonByName($name: String) {
+      completeDigimonByName(name: $name) {
         name
         img
         level
@@ -38,21 +39,27 @@ export class DigimonausgabeComponent implements OnInit {
     }`
 
 
-    fetch('http://localhost:4000/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query,
-        variables: {name},
+
+      fetch('http://localhost:4000/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query,
+          variables: {name},
+        })
       })
-    })
-      .then(r => r.json())
-      .then(data => document.body.append(JSON.stringify(data)))
+        .then(r => r.json())
+
+        .then(data => document.body.append(JSON.stringify(data)))
+
+
+
 
     document.body.style.textAlign = 'center';
     document.body.style.fontFamily = 'Chalkduster';
+    document.body.style.padding= '250px 20px 10px 10px ';
 
   }
 
