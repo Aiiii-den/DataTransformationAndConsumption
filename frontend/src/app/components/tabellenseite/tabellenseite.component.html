@@ -2,31 +2,23 @@
 <header>
   <h1>Digimon Übersicht</h1>
 </header>
-<!-- Tabelle mit Suchfunktion, Filterbutton, Sortierbutton-->
 <nav>
   <div class="searchbar">
     <form action="../digimonausgabe" method="GET">
       <input type="text" list="DigimonName" id="name" name="name" placeholder="Suche dein Digimon" size="38">
-
       <datalist id="DigimonName">
-
         <option *ngFor="let Digimon of digimon | async" value="{{Digimon.name}}">
-
       </datalist>
-
       <button type="submit" id="searchbutton" class="buttonsuche">🔎</button>
     </form>
   </div>
   <button class="filso ">Filtern</button>
   <button class="filso ">Sortieren</button>
 </nav>
-
 <body>
 <section class="digimoncard">
   <div *ngFor="let Digimon of digimon | async">
-
     <p><img src="{{Digimon.img}}"><br> {{Digimon.name}} </p>
-
   </div>
 </section>
 <a href="../startseite">zurück</a>

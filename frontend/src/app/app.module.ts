@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 
@@ -8,9 +8,9 @@ import {TabellenseiteComponent} from './components/tabellenseite/tabellenseite.c
 import {StartseiteComponent} from './components/startseite/startseite.component';
 import {DigimonausgabeComponent} from './components/digimonausgabe/digimonausgabe.component';
 
-import { ApolloModule, Apollo } from 'apollo-angular';
-import { HttpLink } from 'apollo-angular/http';
-import { InMemoryCache } from '@apollo/client/core';
+import {ApolloModule, Apollo} from 'apollo-angular';
+import {HttpLink} from 'apollo-angular/http';
+import {InMemoryCache} from '@apollo/client/core';
 
 
 @NgModule({
@@ -30,11 +30,12 @@ import { InMemoryCache } from '@apollo/client/core';
   providers: [],
   bootstrap: [AppComponent]
 })
+//Verbindung Frontend mit Apollo-Server
 export class AppModule {
   constructor(
     apollo: Apollo,
     httpLink: HttpLink
-  ){
+  ) {
     apollo.create({
       link: httpLink.create({uri: 'http://localhost:4000'}),
       cache: new InMemoryCache()

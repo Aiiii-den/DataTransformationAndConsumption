@@ -10,6 +10,7 @@ import {map} from "rxjs/operators";
   templateUrl: './startseite.component.html',
   styleUrls: ['./startseite.component.css']
 })
+
 export class StartseiteComponent {
 
   digimon: Observable<Digimon[]>;
@@ -17,16 +18,15 @@ export class StartseiteComponent {
   constructor(private apollo: Apollo) {
   }
 
-
   ngOnInit() {
     this.digimon = this.apollo.watchQuery<Query>({
       query: gql`
- query AllDigimon {
-  allDigimon {
-    img
-    name
-  }
-}`
+      query AllDigimon {
+       allDigimon {
+       img
+       name
+       }
+      }`
     })
       .valueChanges
       .pipe(

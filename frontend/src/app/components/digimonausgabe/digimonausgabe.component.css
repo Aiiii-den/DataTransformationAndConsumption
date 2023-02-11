@@ -1,4 +1,4 @@
-html{
+html {
   background-color: #dadada;
   background-size: 100% 100%;
   position: absolute;
@@ -9,6 +9,7 @@ html{
   margin: -1em;
   z-index: -1;
 }
+
 header {
   background-color: rgb(63, 76, 196);
   padding-top: 0.1em;

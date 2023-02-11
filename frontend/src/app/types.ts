@@ -17,15 +17,7 @@ export type Cards = {
 
 }
 
-export type DigimonByName1 = {
-  name;
-  img;
-  level;
-  cards: Cards[];
-}
-
 export type Query = {
-  digimonByName2: DigimonByName1[];
   allDigimon: Digimon[];
   alleCards: Cards[];
 }

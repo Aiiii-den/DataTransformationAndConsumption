@@ -12,11 +12,12 @@ const routes: Routes = [
     redirectTo: 'startseite',
     pathMatch: 'full'
   },
+  //Routen unserer Seiten
   {path: 'startseite', component: StartseiteComponent},
   {path: 'tabellenseite', component: TabellenseiteComponent},
-
   {path: 'digimonausgabe', component: DigimonausgabeComponent}
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
