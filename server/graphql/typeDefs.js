@@ -21,13 +21,13 @@ module.exports=gql`
         image_url: String
         play_cost: Int
         evolution_cost: Int
-    }
+    },
 
     #Schemata für die favorisierten Digimons aus der DB
     type Favorite {
         username: String!,
         cardname: String!,
-    }
+    },
 
     type Query {
         allDigimon: [Digimon] 
@@ -47,28 +47,40 @@ module.exports=gql`
         
         completeDigimonByName(name: String): [Digimon]
         #returns alle Digimon (incl cards) Attribut für ein spezifisches Digimon -> Vereinigung beider REST API Rückgaben
-        
+        #return all Favorites
         getAllFavorites: [Favorite]
-        #returns alle in der DB gespeicherten Favorites mit Username und Cardname aus der DB
+        #delete favorite by adding id
+        deleteFavoriteById(_id: ID!): Payload!
+        #return favorite by adding username
+        getFavoriteByUsername(username: String): Payload!
+        #delete favorite by adding username
+        deleteFavotiteByUsername(username: String): Payload!
         
-        getFavoriteByUsername(username: String): Favorite
-        #returns einen Favorite von dem eigegeben Username aus der DB
-        
-        deleteFavoriteById(_id: ID!): Favorite
-        #löscht ein Favorite aus der DB anahnd der ID
-        
-        deleteFavoriteByUsername(username: String): Favorite
-        #löscht ein Favorite aus der DB anhand des Usernames 
-        
-    }
+    },
     
     type Mutation {
-        addFavorite(username: String, cardname: String): Favorite!
-        #fügt ein Favorite mit Username und Cardname der DB hinzu
-        
-        updateFavoriteByUsername(username: String!, cardname: String!): Favorite! 
-        #ersetzt bei dem angegebenen Username den Cardname in der DB
-       
-    }
+        #add new favorite
+        addFavorite(username: String, cardname: String): Payload!,
+        #aktuellisieren favorite by adding username
+        updateFavoriteByUsername(username: String!, cardname: String!): Payload!
+    },
 
+    union Payload = Favorite |  InputCannotBeNull | UserAlreadyExists | UserNotFound | IDNotFound
+    
+    interface Error{
+        message:String!
+    },
+    #Favorite error code.
+    type InputCannotBeNull implements Error{
+        message: String!
+    },
+    type UserAlreadyExists implements Error{
+        message: String!
+    },
+    type UserNotFound implements Error{
+        message: String!
+    },
+    type IDNotFound implements Error{
+        message: String!
+    },
 `
