@@ -5,14 +5,14 @@
 Unsere Anwendung ist aus einem Hochschul-Projekt entstanden, bei dem es darum ging zwei verschiedene REST-APIs miteinander zu verschmelzen. Unsere erste API ist die [Digimon API](https://digimon-api.vercel.app/) und unsere zweite ist die [Digimon TCG API](https://documenter.getpostman.com/view/14059948/TzecB4fH).
 
 Es soll der Anwenderin ermöglichen mithilfe einer einzigen Abfrage Daten aus beiden Schnittstellen zu ziehen. 
-Beide APIs liefern uns unterschiedliche Informationen. Die Digimon API gibt uns das Level, den Namen und ein Bild zurück. Bei der Digimon TCG API erhalten wir Daten zu den jeweiligen Karten, die es zu einem Digimon gibt. (Wie z.B. Name des Digimons, ID der Karte, Stand des Digimons, ein Bild der Karte sowie noch weitere.) Über das Attribut 'Name' verschmelzen wir die Schnittstellen miteinander. So können wir Namen, Level, Bild und alle Karten, die es zum Digimon gibt, ausgeben lassen.
-Die Verschmelzung der beiden API-Rückgaben erfolgt, indem zuerst ein Digimon eines bestimmten Namens der Digimon-API geliefert wird. Im zweiten Schritt werden in der selben Methode alle Karten von dem bestimmten Digimon von der Digimon TCG API abgerufen. Das Digimon-Objekt bekommt die zurück gelieferten als weiteres Attribut drangehängt. Das Bedeutet am Ende bekommt man ein Digimon, welches ein Karten-Array als zusätzliches Attribut enthält.
+Beide APIs liefern uns unterschiedliche Informationen. Die Digimon API gibt uns das Level, den Namen und ein Bild zurück. Bei der Digimon TCG API erhalten wir Daten zu den jeweiligen Karten, die es zu einem Digimon gibt. (Wie z.B. Name des Digimon, ID der Karte, Stand des Digimon, ein Bild der Karte sowie noch weitere.) Über das Attribut 'Name' verschmelzen wir die Schnittstellen miteinander. So können wir Namen, Level, Bild und alle Karten, die es zum Digimon gibt, ausgeben lassen.
+Die Verschmelzung der beiden API-Rückgaben erfolgt, indem zuerst ein Digimonnamen der Digimon-API geliefert wird. Im zweiten Schritt werden in der selben Methode alle Karten von dem bestimmten Digimon von der Digimon TCG API abgerufen. Das Digimon-Objekt bekommt die zurück gelieferten als weiteres Attribut drangehängt. Das Bedeutet am Ende bekommt man ein Digimon, welches ein Karten-Array als zusätzliches Attribut enthält.
 
 Die Startseite unserer Benutzeroberfäche enthält eine Suchfunktion und einen Button. Über die Suchfunktion kann man nach einzelnen Digimon suchen.
 
 <img width="1440" alt="Startseite" src="https://user-images.githubusercontent.com/82514219/218509641-0f1fb30e-c3ef-40a5-ad99-ddbf41625d23.png">
 
-Durch den Button kann man sich alle vorhandenen Digimons auf unserer Übersichtsseite ansehen. Hier sind alle vorhanden Digimons mit Bild aufgelistet.
+Durch den Button kann man sich alle vorhandenen Digimon auf unserer Übersichtsseite ansehen. Hier sind alle vorhanden Digimon mit Bild aufgelistet.
 
 <img width="1440" alt="Ueberschichtseite" src="https://user-images.githubusercontent.com/82514219/218509697-3fdbf2ad-2a59-4faa-a8b8-ed2a9aaecad7.png">
 
@@ -62,10 +62,11 @@ Wenn Sie unsere Anwendung nutzen wollen dann öffnen Sie im Browser http://local
 ### Backend
 
 Über Apollo können Sie die Sandbox unter http://localhost:4000/ aufrufen. In dieser können Sie Datenbankabfragen stellen und Ihrer Favoriten speichern, ausgeben lassen, bearbeiten oder löschen. Des Weiteren können Sie Abfragen an unsere REST-Schnittstellen stellen und sich die Daten ausgeben lassen. 
-So können alle Digimons mit ihren dazugehörigen Karten ausgegeben werden oder ein Digimon, bei dem man den Namen aus Attribut eingibt. (Siehe Abbildung)
+So können alle Digimon mit ihren dazugehörigen Karten ausgegeben werden oder ein Digimon, bei dem man den Namen aus Attribut eingibt. (Siehe Abbildung)
 
 <img width="1440" alt="DigimonByName" src="https://user-images.githubusercontent.com/82514219/218511433-9a7124d8-1148-4242-8a8b-7d2ad99f1812.png">
 
-### Mögliche Weiterentwicklungen
+## Mögliche Weiterentwicklungen
 
-Es können noch Filterfunktionen dazu kommen.
+Unserer Webseite kann noch ein User Login hinzugefügt werden. Dann kann jede Anwenderin ihrer Favoriten speichern. Des Weitern ist es noch möglich Filter einzubauen, um nach Level oder Favoriten zu filter. Eine weitere Weiterentwicklung wäre es noch die Digimon nach Anfangsbuchstaben oder Level zu sortieren.
+Es wäre auch denkbar noch weitere Schnittstellen anzubinden, um noch mehr Daten zu verschmelzen.
