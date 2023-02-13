@@ -3,47 +3,21 @@ const FavoriteDBSchema = require("../../../SchemaDB/FavoriteDBSchema");
 
 //create Mutation for add favorite digimon to the FavoriteSchema
 const Mutations = {
-     Mutation:{
-        async addFavorite(parent, args, context, info){
-                const exist =  await FavoriteDBSchema.findOne({username: args.username});
-                if(exist != null){
-                    //throw new Error(`${exist.username} existiert bereits!`)
-                    return {
-                        __typename: "UserAlreadyExists",
-                        message: `${args.username} existiert nicht`
-                    }
-                }
-                if(args.cardname == ""){
-                    return {
-                        __typename: "InputCannotBeNull",
-                        message: "cardname darf nicht leer sein!"
-                    }
-                }
-                const card =  new FavoriteDBSchema({
-                    username: args.username,
-                    cardname: args.cardname, 
-                });
-                await card.save();
-                console.log(card);
-                return card;
+    Mutation:{
+        async addFavorite(parent, args){
+            const card =  new FavoriteDBSchema({
+                username: args.username,
+                cardname: args.cardname,
+            });
+            await card.save();
+            console.log(card);
+            return card;
         },
 
         async updateFavoriteByUsername(parent, args){
-            const exist =  await FavoriteDBSchema.findOne({username: args.username});
-            if(exist == null){
-                return {
-                    __typename: "UserNotFound",
-                    message: `${args.username} existiert nicht`
-                }
-            }
-            if(args.cardname == ""){
-                return {
-                    __typename: "InputCannotBeNull",
-                    message: "cardname darf nicht leer sein!"
-                }
-            }
             return await FavoriteDBSchema.findOneAndReplace({username: args.username}, {username: args.username, cardname: args.cardname});
         },
-     }
+
+    }
 }
 module.exports=Mutations;
