@@ -30,44 +30,44 @@ module.exports=gql`
     }
 
     type Query {
-        allDigimon: [Digimon] 
         #returns name, img & level aller Digimon der Serie -> Datenabfrage der DigimonAPI
+        allDigimon: [Digimon] 
 
-        digimonByName(name: String): [Digimon]
         #returns ein Digimon gesucht nach Namen -> Datenabfrage der DigimonAPI
+        digimonByName(name: String): [Digimon]
         
-        digimonByLevel(level: String): [Digimon]
         #returns Digimon eines bestimmten levels -> Datenabfrage der DigimonAPI
+        digimonByLevel(level: String): [Digimon]
         
-        allCards: [Cards!] 
-        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI 
+        #returns cardnumber & name aller Cards -> Datenabfrage der CardsAPI
+        allCards: [Cards!]  
         
-        cardsByName(name: String): [Cards!] 
         #returns alle type Cards Attribute eines spezifischen Digimons (Abfrage mit name) -> Datenabfrage der CardsAPI 
+        cardsByName(name: String): [Cards!] 
         
-        completeDigimonByName(name: String): [Digimon]
         #returns alle Digimon (incl cards) Attribut für ein spezifisches Digimon -> Vereinigung beider REST API Rückgaben
+        completeDigimonByName(name: String): [Digimon]
         
+        #return alle in der DB gespeicherten Favorites mit dem Username und Cardname aus der DB
         getAllFavorites: [Favorite]
-        #returns alle in der DB gespeicherten Favorites mit Username und Cardname aus der DB
         
+        #return ein Favorite von dem eigegebenen Username aus der DB
         getFavoriteByUsername(username: String): Favorite
-        #returns einen Favorite von dem eigegeben Username aus der DB
         
+        #löscht ein Favorite aus der DB anhand der ID
         deleteFavoriteById(_id: ID!): Favorite
-        #löscht ein Favorite aus der DB anahnd der ID
         
+         #löscht ein Favorite aus der DB anhand des Usernames
         deleteFavoriteByUsername(username: String): Favorite
-        #löscht ein Favorite aus der DB anhand des Usernames 
         
     }
     
     type Mutation {
-        addFavorite(username: String, cardname: String): Favorite!
         #fügt ein Favorite mit Username und Cardname der DB hinzu
+        addFavorite(username: String, cardname: String): Favorite!
         
-        updateFavoriteByUsername(username: String!, cardname: String!): Favorite! 
         #ersetzt bei dem angegebenen Username den Cardname in der DB
+        updateFavoriteByUsername(username: String!, cardname: String!): Favorite! 
        
     }
 
