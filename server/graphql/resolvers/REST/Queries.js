@@ -1,22 +1,22 @@
 const resolvers= {
     Query: {
 
-        //returns alle Digimon (ohne "cards" Attribut) der DigimonAPI
+        //return alle Digimon (ohne "cards" Attribut) der DigimonAPI
         allDigimon: (_, __, {dataSources}) => {
             return dataSources.digimonAPI.getAllDigimon()
         },
 
-        //returns ein spezifisches Digimon (ohne "cards" Attribut) der DigimonAPI - Suchkriterium = Name
+        //return ein spezifisches Digimon (ohne "cards" Attribut) der DigimonAPI - Suchkriterium = Name
         digimonByName: (_, {name}, {dataSources}) => {
             return dataSources.digimonAPI.getDigimonByName(name);
         },
 
-        //returns alle Digimon (ohne "cards" Attribut) eines Levels der DigimonAPI - Suchkriterium = Level
+        //return alle Digimon (ohne "cards" Attribut) eines Levels der DigimonAPI - Suchkriterium = Level
         digimonByLevel: (_, {level}, {dataSources}) => {
             return dataSources.digimonAPI.getDigimonByLevel(level);
         },
 
-        //returns alle Cards (nur "cardnumber" &  "name" Attribute) der CardsAPI
+        //return alle Cards (nur "cardnumber" &  "name" Attribute) der CardsAPI
         allCards: (_, __, {dataSources}) => {
             return dataSources.cardsAPI.getAllCards();
         },
@@ -27,7 +27,7 @@ const resolvers= {
         },
 
         /*
-        resolves das promise der DigimonAPi und fügt alle Cards mit einem bestimmten Namen
+        resolve das promise der DigimonAPI und fügt alle Cards mit einem bestimmten Namen
         der CardsAPI als neues Attribut zum digimon Objekt hinzu
         Suchkriterium Digimon = Name & Suchkriterium Cards = Name
          */
